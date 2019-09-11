@@ -1,0 +1,74 @@
+{extend name="layout"}
+
+{block name="header"}
+<script type="text/javascript" src="__IMAGES__/jquery.min.js"></script>
+<link rel="stylesheet" href="__IMAGES__/page_thinkphp.css">
+{/block}
+
+{block name="content"}
+<div class="layui-inline">
+    <div class="layui-input-inline">
+        <h3>会员列表</h3>
+    </div>
+</div>
+<blockquote class="layui-elem-quote news_search">
+    <form method="get">
+        <div class="layui-inline">
+            <div class="layui-input-inline">
+                <input type="text" name="username" value="{$username}" placeholder="输入用户名" class="layui-input search_input">
+            </div>
+            <input type="submit" class="layui-btn search_btn" value="查询">
+        </div>
+    </form>
+</blockquote>
+<div class="layui-form news_list">
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>会员账号</th>
+            <th>状态</th>
+            <th>手机号</th>
+            <th>最后活动时间</th>
+            <th>注册时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody class="links_content">
+        {volist name="list" id="vo"}
+        <tr>
+            <td class="center">{$vo.id}</td>
+            <td>{$vo.username}</td>
+            <td class="center">{if condition="$vo.state eq '1'"}正常{else}禁用{/if}</td>
+            <td class="center">{$vo.phone}</td>
+            <td class="center">{$vo.lasttime|date='Y-m-d H:i',###}</td>
+            <td class="center">{$vo.regtime|date='Y-m-d H:i',###}</td>
+            <td>
+                {if condition="$vo.state eq '1'"}
+                <a href="{:url('state?id='.$vo['id'].'&state=no')}" class="layui-btn layui-btn-mini news_edit"> 标记为禁用</a>
+                {else}
+                <a href="{:url('state?id='.$vo['id'].'&state=yes')}" class="layui-btn layui-btn-mini news_edit"> 标记为正常</a>
+                {/if}
+                <a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="8" href="javascript:if(confirm('确实要删除吗?'))location='{:url('del?id='.$vo['id'])}'"><i class="layui-icon"></i> 删除</a>
+            </td>
+        </tr>
+        {/volist}
+        </tbody>
+    </table>
+</div>
+{$list->render()}
+{/block}
+
+{block name="footer"}
+<script language="javascript">
+    new SMValidator('form', {
+        submit: function(valid, form) {
+            if(valid) form.submit();
+        },
+        required: '不能为空',
+        fields: {
+            isname: 'required|length(3,12)',
+        }
+    });
+</script>
+{/block}

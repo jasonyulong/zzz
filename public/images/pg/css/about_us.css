@@ -1,0 +1,20 @@
+body{background-color:#F0F0F0 }
+#window{display: flex;flex-direction: column}
+#window div{border-radius: 20px;width: 120px;margin-bottom:10px;height: 40px;border-radius: 20px;text-align: center;line-height: 40px;font-size: 18px;color: #444;font-weight: 200;background-color: #F0F0F0;cursor: pointer}
+#window .scrool{background-color: #DD0000;color: white}
+#service-scope{width: 1200px;min-width: 1200px;margin: 0 auto;margin-top: 40px}
+#about_us{width: 1040px;background-color: white;padding: 40px;margin-left: 160px;}
+#about_us h2{font-weight: 600;color: #DD0000;margin: 0px;}
+#about_us h4{font-weight: 600;margin: 0px;margin-top: 40px;font-size: 18px;color: #444}
+#about_us .title{padding: 40px 0px;border-bottom: 1px solid #dcdcdc;color: #666666;line-height:40px;font-size: 16px;}
+#about_us_f{width: 1040px;background-color: white;padding: 40px;margin-left: 160px;margin-top: 40px;}
+#about_us_f h2{font-weight: 600;color: #DD0000;margin: 0px;}
+#about_us_f .title{padding: 40px 0px;border-bottom: 1px solid #dcdcdc;color: #666666;line-height: 40px;font-size: 16px;}
+#about_us_f .project{display: flex}
+#about_us_f .project p{width: 72px;font-size: 18px;font-weight: 600;margin: 0px;display: block;margin-right: 40px;padding: 40px 0px;color: #444     }
+#about_us_f .project div{width: 840px;padding: 40px 0px;border-bottom: 1px solid #dcdcdc;color:#666666 ;line-height: 40px;font-size: 18px;}
+#about_us_z{width: 1040px;background-color: white;padding: 40px;margin-left: 160px;margin-top: 40px;}
+#about_us_z h2{font-weight: 600;color: #DD0000;margin: 0px;font-size: 32px}
+#about_us_z .title{padding: 40px 0px;color: #666666;line-height: 42px;font-size: 18px;}
+#table{ border-collapse:collapse;border: 1px solid #dcdcdc;width: 960px;background-color: white;}
+#table tr td{width: 160px;height: 160px;}

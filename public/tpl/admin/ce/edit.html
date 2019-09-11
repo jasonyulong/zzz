@@ -1,0 +1,76 @@
+{extend name="layout"}
+
+{block name="header"}
+<script type="text/javascript" src="__IMAGES__/jquery.min.js"></script>
+<link type="text/css" rel="stylesheet" href="__IMAGES__/page_thinkphp.css" />
+<script type="text/javascript" src="__STATIC__/vali/dist/SMValidator.min.js"></script>
+<script type="text/javascript" src="__STATIC__/vali/src/config.js"></script>
+{/block}
+
+{block name="content"}
+<form class="layui-form" method="post" enctype="multipart/form-data">
+    <div class="layui-form-item">
+        <label class="layui-form-label">名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="name" value="{$info.name}" class="layui-input linksName" lay-verify="required" placeholder="请输入名称">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">热点</label>
+        <div class="layui-input-block">
+            <input type="radio" name="hot" value="0" value="正常" title="正常" {eq name="info.hot" value="0" }checked{/eq}>
+            <input type="radio" name="hot" value="1" value="热点" title="热点" {eq name="info.hot" value="1" }checked{/eq}>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">短简介</label>
+        <div class="layui-input-block">
+            <textarea name="des" placeholder="请输入短简介" class="layui-textarea">{$info.des}</textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">长简介</label>
+        <div class="layui-input-block">
+            <textarea name="l" placeholder="请输入长简介" class="layui-textarea">{$info.l}</textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">图片</label>
+        <div class="layui-input-block">
+            <div class="layui-box layui-upload-button">
+                <input type="file" name="pic" class="layui-upload-file" lay-title="上传图片">
+                <span class="layui-upload-icon"><i class="layui-icon">+</i>上传图片</span></div>
+                {if condition="$info.pic neq ''"}
+                <img src="{$info.pic}" width="200" height="200">
+                {/if}
+            <div class="layui-form-item">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit="" lay-filter="addLinks">修改</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="{$info.id}">
+</form>
+{/block}
+
+{block name="footer"}
+<script type="text/javascript" src="__IMAGES__/layui/page/links/linksAdd.js"></script>
+<script language="javascript">
+    new SMValidator('form', {
+        submit: function(valid, form) {
+            if(valid) form.submit();
+        },
+        required: '不能为空',
+        fields: {
+            name: 'required|length(1,24)',
+            url: 'length(0,500)',
+            des: 'length(0,500)',
+            l: 'length(0,5000)',
+        }
+    });
+</script>
+{/block}

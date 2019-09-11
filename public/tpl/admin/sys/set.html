@@ -1,0 +1,58 @@
+{extend name="layout"}
+
+{block name="header"}
+<script type="text/javascript" src="__IMAGES__/jquery.min.js"></script>
+<link type="text/css" rel="stylesheet" href="__IMAGES__/page_thinkphp.css" />
+<script type="text/javascript" src="__STATIC__/vali/dist/SMValidator.min.js"></script>
+<script type="text/javascript" src="__STATIC__/vali/src/config.js"></script>
+{/block}
+
+{block name="content"}
+<form class="layui-form" method="post">
+    <div class="layui-form-item">
+        <label class="layui-form-label">网站名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" value="{$info.title}" class="layui-input linksName" lay-verify="required" placeholder="请输入网站名称">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">固定电话</label>
+        <div class="layui-input-block">
+            <input type="text" name="tel" value="{$info.tel}" class="layui-input linksName" lay-verify="required" placeholder="请输入固定电话">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">统计代码</label>
+        <div class="layui-input-block">
+            <input type="tel" name="tongji" value="{$info.tongji}" class="layui-input linksUrl" lay-verify="required|url" placeholder="请输入统计代码">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">ICP备案号</label>
+        <div class="layui-input-block">
+            <input type="tel" name="icp" value="{$info.icp}" class="layui-input linksUrl" lay-verify="required|url" placeholder="请输入ICP备案号">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit="" lay-filter="addLinks">提交</button>
+        </div>
+    </div>
+</form>
+{/block}
+
+{block name="footer"}
+<script language="javascript">
+    new SMValidator('form', {
+        submit: function(valid, form) {
+            if(valid) form.submit();
+        },
+        required: '不能为空',
+        fields: {
+            title: 'length(1,36)',
+            tongji: 'length(6,50)',
+            icp: 'length(3,18)',
+        }
+    });
+</script>
+{/block}

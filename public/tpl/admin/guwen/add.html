@@ -1,0 +1,103 @@
+{extend name="layout"}
+
+{block name="header"}
+<script type="text/javascript" src="__IMAGES__/jquery.min.js"></script>
+<link type="text/css" rel="stylesheet" href="__IMAGES__/page_thinkphp.css" />
+<script type="text/javascript" src="__STATIC__/vali/dist/SMValidator.min.js"></script>
+<script type="text/javascript" src="__STATIC__/vali/src/config.js"></script>
+{/block}
+
+{block name="content"}
+<form class="layui-form" method="post" enctype="multipart/form-data">
+    <div class="layui-form-item">
+        <label class="layui-form-label">顾问名</label>
+        <div class="layui-input-block">
+            <input type="text" name="name" class="layui-input linksName" lay-verify="required" placeholder="请输入顾问名">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">手机号码</label>
+        <div class="layui-input-block">
+            <input type="tel" name="tel" class="layui-input linksUrl"  placeholder="请输入手机号码">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">QQ</label>
+        <div class="layui-input-block">
+            <input type="tel" name="qq" class="layui-input linksUrl"  placeholder="请输入QQ">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">头像(300x300)</label>
+        <div class="layui-input-block">
+            <div class="layui-box layui-upload-button">
+                <input type="file" name="facefile" class="layui-upload-file" lay-title="上传图片">
+                <span class="layui-upload-icon"><i class="layui-icon">+</i>上传图片</span></div>
+            <div class="layui-form-item">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">星级</label>
+        <div class="layui-input-block">
+            <select name="star" class="isselect" style="display: block;">
+                <option value="0">无星级</option>
+                <option value="1">1星级</option>
+                <option value="2">2星级</option>
+                <option value="3">3星级</option>
+                <option value="4">4星级</option>
+                <option value="5">5星级</option>
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">自我简介(300字内)</label>
+        <div class="layui-input-block">
+            <textarea placeholder="请输入内容" class="layui-textarea" name="rec"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">服务内容</label>
+        <div class="layui-input-block">
+            <div id="editor"></div><input type="hidden" id="des" name="des">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit="" id="btn1" lay-filter="addLinks">添加</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+{/block}
+
+{block name="footer"}
+<script language="javascript">
+    new SMValidator('form', {
+        submit: function(valid, form) {
+            if(valid) form.submit();
+        },
+        required: '不能为空',
+        fields: {
+            name: 'required|length(1,12)',
+            tel: [/^1[3|4|5|8][0-9]\d{4,8}$/, '手机号格式错误'],
+            qq: [/^[1-9][0-9]{4,11}$/, 'QQ号格式错误'],
+            rec: 'required',
+        }
+    });
+</script>
+
+<script type="text/javascript" src="__PUBLIC__/wangeditor/release/wangEditor.min.js"></script>
+<script type="text/javascript">
+    var E = window.wangEditor
+    var editor = new E('#editor')
+    editor.customConfig.uploadImgServer = '{:url("admin/article/upload")}'
+    editor.customConfig.uploadImgMaxSize = 2 * 1024 * 1024
+    editor.customConfig.uploadImgMaxLength = 20
+    editor.create()
+
+    document.getElementById('btn1').addEventListener('click', function () {
+        document.getElementById("des").value = editor.txt.html();
+    }, false)
+</script>
+{/block}

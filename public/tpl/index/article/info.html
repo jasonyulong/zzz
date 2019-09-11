@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="UTF8">
+<head>
+    <meta charset="UTF-8">
+    <title>{$info.title}</title>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/reset.css">
+    <script src="__IMAGES__/zzz/js/lib/jquery-3.3.1.min.js"></script>
+    <script src="__IMAGES__/zzz/js/lib/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/public.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/views/contentUS.css">
+    <style>
+        body{background-color: #F0F0F0}
+        .char{background-color: yellow}
+        .newsbody{margin: 50px auto ;width: 1200px;display: flex;justify-content: space-between;align-items: flex-start}
+        .newsleft{width: 800px;background-color: white;padding: 40px;position: relative}
+        #newsrigth{width: 350px;background-color: white;}
+        .newsrigth{width: 350px;background-color: white;position: fixed;z-index: 10}
+        .news{padding-left: 20px;padding-right: 20px;}
+        .news>h4{font-size: 25px;font-weight: bold;line-height: 48px;color: #333333}
+        .newslist>a{margin-bottom: 25px;display:flex;justify-content: flex-start;color: #333333; height: 60px;}
+        .newslist>a>img{transition:  all 10s ease-in-out;height: 60px}
+        .newslist>a>.imgwrap{width: 30%;height:100%;overflow: hidden;display: inline-block;}
+        .newslist>a>.imgwrap img{width:100%;height: 100%;display: block;vertical-align: 0px;min-width: 100%;min-height: 100%;transition: 0.2s ease-in-out}
+        .newslist>a>.titwrap{width: 230px;height: 100%;}
+        .newslist>a>.titwrap>p, .newslist>a>.titwrap>em{display: block;width: 100%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap}
+        .newslist>a>.titwrap{display: flex;align-content: space-between;flex-direction: column;justify-content: space-between;width: 70%}
+        .newslist>a>.titwrap>p{font-size: 18px;font-weight: bold;text-indent: 10px;line-height: 19px}
+        .newslist>a>.titwrap>em{font-size: 14px;text-indent: 10px;}
+        .newslist>a:hover{}
+        .newslist>a:hover img{    transform: scale(1.2);}
+        .newslist>a:hover p{color: #D2292C}
+        .newsleft >h1{font-weight: bold;line-height: 70px;}
+        .newsleft>.proto>span{margin-right: 10px;display: inline-block;color: #666666}
+        .newsleft>div{margin-top: 40px;font-size: 15px;color: #333333;line-height: 35px;text-indent: 20px;}
+        .newsleft>div img{max-width: 600px}
+        .newsleft>.page>a{color: black;font-size: 14px;display: block;margin-top: 20px;}
+        .newsleft>.page>a:hover{color: #D2292C}
+    </style>
+</head>
+<body>
+
+{include file="../public/tpl/index/nav.html" /}
+
+
+<div class="newsbody">
+    <div class="newsleft">
+        <h1>{$info.title}</h1>
+        <p class="proto"><span>日期：{$info.time}</span><span>行业分类：{$info.sortinfo.name}</span></p>
+        <div>
+        	{if condition="$info.pic != ''"}
+        	<img src="{$info.pic}" alt="">
+            {/if}
+        	{$info.content}
+        </div>
+
+        <p class="page">
+            {if condition="$updown.up.id neq null"}
+            <a href="{:url('index/article/info?id='.$updown.up.id)}">上一篇：{$updown.up.title}</a>
+            {else}
+            暂无
+            {/if}
+            <br>
+            {if condition="$updown.down.id neq null"}
+            <a href="{:url('index/article/info?id='.$updown.down.id)}">下一篇：{$updown.down.title}</a>
+            {else}
+            暂无
+            {/if}
+        </p>
+    </div>
+    <div id="newsrigth">
+        <div class="newsrigth" >
+            <div class="char" style="background-color:#fff; padding:15px; padding-left:42px;">
+                <div class="bshare-custom icon-medium-plus"><div class="bsPromo bsPromo2"></div><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到豆瓣" class="bshare-douban" href="javascript:void(0);"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到Twitter" class="bshare-twitter" href="javascript:void(0);"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+            </div>
+            <div class="news">
+                <h4>推荐新闻</h4>
+                <div class="newslist">
+                    {volist name="tuilist" id="vo" }
+                    <a href="{:url('index/article/info',['id'=>$vo['id']])}" class="news-right-pro">
+                        <div class="imgwrap"><img src="{$vo.pic}" alt="" title=""></div>
+                        <div class="titwrap">
+                            <p>{$vo.title}</p>
+                            <em><strong>发布时间：</strong>{$vo.time|date='Y-m-d H:i:s',###}</em>
+                        </div>
+                    </a>
+                    {/volist}
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+{include file="../public/tpl/index/foot.html" /}
+<script>
+    $(function () {
+        $("#indexNav").hide()
+        $("#second_Head").show()
+        $("#nav_index").addClass("active")
+        $("#nav_index2").addClass("active")
+    })
+</script>
+<script>
+  /* var a = document.documentElement.scrollHeight
+    $(window).on("scroll",function () {
+        console.log($(document).scrollTop()+window.innerHeight-a)
+            if($(document).scrollTop()+window.innerHeight +276-a == 0 || $(document).scrollTop()+window.innerHeight+276 -a < 0 ){
+            $("#newsrigth").css("top",Math.abs($(document).scrollTop()) )
+        }
+       /!* if($(window).scrollTop()<a){
+            $("#newsrigth").css("top",$(document).scrollTop())
+        }*!/
+
+    })*/
+</script>
+</body>
+</html>

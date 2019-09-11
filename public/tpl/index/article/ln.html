@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>公益理念 - {$sysinfo.title}</title>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/reset.css">
+    <script src="__IMAGES__/zzz/js/lib/jquery-3.3.1.min.js"></script>
+    <script src="__IMAGES__/zzz/js/lib/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/animate.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/public.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/views/responsibility.css">
+    <script src="__IMAGES__/zzz/js/views/pubControll.js"></script>
+</head>
+<body>
+{include file="../public/tpl/index/nav.html" /}
+<div id="news_head">
+    <div class="title">
+        <h2 id="animation_h2">弘扬扶贫济困传统美德，推进慈善事业发展！</h2>
+        <p id="animation_p">共同架起慈善的桥梁，建设文明祥和、美好温馨的美丽世界！</p>
+    </div>
+</div>
+<div class="pub_link">
+    <div id="new_chooes">
+        <p class="active"><a href="{:url('index/article/ln')}" class="active">公益理念</a></p>
+        <p><a href="{:url('index/article/xm')}" >公益项目</a></p>
+    </div>
+</div>
+<div class="res_f" id="a">
+    <section class="res-f-l">
+        <h2 class="h2">公益理念</h2>
+        <h3 class="h3"><!--Public Welfare Concept--> </h3>
+        <blockquote>
+            集团一直秉承“热心公益，回馈社会”的公益理念，积极履行企业社会责任，支持社会公益事业。多年来，集团积极响应社会各种公益活动，积极投身到公益事业当中。<br><br>
+            集团注重企业员工公益理念的培植，鼓励员工关注社会，号召员工积极参与各种慈善活动，为需要帮助的社会群体尽一己之力。<br><br>
+            秉承和谐的社会责任理念,中兴瑞华以创造经济效益,维护和谐社会为根基;以提升集团致力于企业公益理念的推广，希望通过不懈的努力，让更多需要慈善救助的社会群体得到关怀和帮助。<br><br>
+
+        </blockquote>
+    </section>
+    <section class="res-f-r">
+        <img src="__IMAGES__/zzz/imgs/responsibliity/06.jpg" alt="">
+    </section>
+</div>
+{include file="../public/tpl/index/foot.html" /}
+<script>
+    $(window).on("scroll",function () {
+            if($(window).scrollTop() > 300){
+                $(".res-f-l").addClass("a-fadeinL")
+                $(".res-f-r").addClass("a-fadeinR")
+            }
+    })
+    $(function () {
+        $("#nav_ln2").addClass("active")
+        $("#nav_ln").addClass("active")
+    })
+</script>
+<script src="__IMAGES__/zzz/js/publics.js"></script>
+</body>
+</html>

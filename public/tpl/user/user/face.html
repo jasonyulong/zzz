@@ -1,0 +1,34 @@
+{extend name="layout"}
+
+{block name="header"}
+<title>更新头像</title>
+<link rel="stylesheet" href="__IMAGES__/pg/css/Personal_index.css">
+<script src="__IMAGES__/pg/js/changehrad.js"></script>
+{/block}
+
+{block name="content"}
+<!--导航栏 end-->
+<div id="service-scope" >
+    <div id="window" style="position: fixed;width: 160px;height: 200px;">
+        <div style="width: 120px;">我要提问</div>
+        <div style="width: 120px;">我的提问</div>
+        <div style="width: 120px;">我的收藏</div>
+        <div class="scrool" style="width: 120px;">跟换头像</div>
+        <div style="width: 120px;">修改密码</div>
+    </div>
+    <div id="changeimg" style="width: 1040px;margin-left: 160px;">
+         <form method="post" enctype="multipart/form-data">
+            <div class="img"><img  width="250" height="250" style="border-radius: 50%" src="{$userinfo.face}"></div>
+            <div class="mroe">更多头像<input type="file" name="face" multiple id="chooseImage"></div>
+            <input type="submit" id="submit" value="确认更换">
+        </form>
+        <h6 style="color: red;text-align: center" id="msg"></h6>
+        <p style="text-align: center;color: #888888">支持图片格式png/jpg/preg，图片大小不能超过2M</p>
+    </div>
+</div>
+<div style="height: 100px;border-bottom: 2px solid #999999"></div>
+{/block}
+
+{block name="footer"}
+<script src="__IMAGES__/pg/js/Personal_index.js"></script>
+{/block}

@@ -1,0 +1,62 @@
+body{background-color: #F4F4F4}
+#news_head{background-image: url("../../imgs/aboutUS/zhonghe1.jpg")}
+.title{width: 1200px;margin: 0 auto;padding-top: 300px;}
+.title em{margin: 0px auto; width: 220px;height: 60px;border: 1px solid white;;display: block;font-size: 24px;color: white;line-height: 60px;text-align: center;font-weight: normal;font-family: "Microsoft YaHei"}
+.title h1{font-size: 70px;color: white;text-align: center;margin-top: 46px;}
+.head{width: 800px;height: 228px;border: 1px solid white;margin: 0 auto}
+.head h1{font-family: 宋体;font-size: 41px;margin-top: 50px;line-height: 60px;font-weight: bold}
+body{background-color: #F4F4F4}
+.pro_down {
+    width: 100%;
+    height: 222px;
+    background: white;
+    cursor: pointer;
+}
+.pro_down:hover{background-color: #dcdcdc}
+.pro_change{
+    background: -ms-linear-gradient(left bottom,#414141 50%,#333);
+    background:-webkit-linear-gradient(left bottom,#414141 50%,#333);
+    background: -o-linear-gradient(left bottom ,#414141 50%,#333);
+    background: -moz-linear-gradient(left bottom,#414141 50%,#333);
+    background: linear-gradient(left bottom,#414141 50%,#333)}
+.pro_downs_change{
+    background: url("../../imgs/business/40x.png")no-repeat center right
+}
+
+.pro_downs{width: 1200px;height: 225px;padding-left: 40px;padding-right: 23px;margin: 0 auto;display: flex;align-items: center;background: url("../../imgs/business/40.png")no-repeat center right}
+.pro_downs_bg{background: url("../../imgs/business/40x.png")no-repeat center right}
+.img-ioc{height: 100px;background-color: #D2292C;width: 100px;text-align: center;line-height: 150px;border-radius: 50%;}
+.img-ioc img:first-child{display: none}
+.img-ioc-change{background-color: white;}
+.title_content{height: 100px;padding-left: 33px;}
+.title_content>p{color: #111;font-size: 20px;margin: 15px 0;}
+.title_content>.p{color: white}
+.title_content>em{color: #a1a1a1;font-size: 18px;}
+.title_content>.em{color: white}
+.down{width: 100%;margin: 0 auto;display: flex;flex-wrap: wrap;border-bottom: 1px solid #D2D2D2;justify-content: center;}
+.fadeIn{display: none}
+.project{width: 50%;display: flex;flex-direction: row-reverse;transition:background-color 2s ease-in}
+.project:hover{
+background: -ms-linear-gradient(left bottom,rgba(255, 115, 3,1)50%,rgba(255, 157, 78,1));
+background: -moz-linear-gradient(left bottom,rgba(255, 115, 3,1)50%,rgba(255, 157, 78,1));
+background: -webkit-linear-gradient(left bottom,rgba(255, 115, 3,1)50%,rgba(255, 157, 78,1));
+background: -o-linear-gradient(left bottom,rgba(255, 115, 3,1)50%,rgba(255, 157, 78,1));
+background: linear-gradient(left bottom,rgba(255, 115, 3,1)50%,rgba(255, 157, 78,1))}
+.project:hover strong{color: white}
+.project:hover em{color: white}
+.project:hover .tit{color: white}
+.project:hover .down-link{color: white;background: url("../../imgs/business/41x.png") no-repeat 120px center;}
+.project:nth-last-of-type(odd){width: 66%;display: flex;flex-direction: row;padding-left: 60px;padding-bottom: 80px}
+.project .pro{width: 100%}
+.project p{margin-top: 50px;margin-bottom: 40px;display: flex}
+.project em{color: #676767;font-size: 18px;width: 40px;display: block}
+.project strong{font-weight: bolder;font-size: 18px;color: #D2292C}
+.project .tit{margin-left: 40px;color: #797979;padding-right: 40px;line-height: 40px;font-size: 20px}
+.down-link{display: block;width: 147px;height: 45px;
+    padding: 10px;color: #797979;margin: 56px 40px;padding: 10px;background-clip:border-box; }
+#service{display: flex;width: 1200px;margin: 0 auto;margin-top: 50px;}
+.wrap_s{width: 600px;padding-bottom: 30px;}
+.img_wrap{width:600px;height: 467px;overflow: hidden }
+.text-wrap{padding: 53px 80px 52px 42px;width: 600px;background-color: white}
+.text-h2{font-size: 30px;margin: 15px 0;font-family: 宋体;}
+.text-art{font-size: 22px;color: #636363;line-height: 34px;margin-top: 30px;}

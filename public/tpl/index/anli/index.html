@@ -1,0 +1,46 @@
+{extend name="layout"}
+
+{block name="header"}
+<title>工作案例</title>
+<link rel="stylesheet" href="__IMAGES__/pg/public/css/public.css">
+<style>
+    body{background-color:#F0F0F0 }
+    #caes{width: 1200px;min-width: 1200px;margin:45px auto;display: flex;flex-wrap: wrap;}
+    #caes .chooescaes{width: 370px;height: 295px; margin-bottom: 50px;text-decoration: none;margin-right: 30px;}
+    #caes .chooescaes:nth-child(3n+0){margin-right: 0px;}
+    #caes .chooescaes .img{width: 370px;height: 220px;overflow: hidden;}
+    #caes .chooescaes .img img{transition: all 0.25s ease-in-out;}
+    #caes .chooescaes .img img:hover{transform: scale(1.1)}
+    #caes .chooescaes p{margin: 0px;padding-top: 10px;padding-bottom: 18px;color: black; }
+    #caes .chooescaes h3{margin: 0px;font-size: 20px;font-weight: 600;color: black; }
+</style>
+{/block}
+
+{block name="content"}
+{include file="../public/tpl/index/head.html" /}
+
+
+<div id="caes">
+    {volist name="list" id="vo"}
+    <a href="{:url('index/anli/info',['id'=>$vo['id']])}" class="chooescaes">
+        <div class="img"><img width="370" height="220" src="{$vo.pic|pic_suo=###,true}" alt="{$vo.name}"></div>
+        <p>RUILINUO CASE</p>
+        <h3>{$vo.name}</h3>
+    </a>
+    {/volist}
+</div>
+<div style="width: 1200px;min-width: 1200px;margin: 50px auto">
+    {$list->render()}
+</div>
+<!--分割线-->
+<div style="height: 65px;border-bottom: 2px solid #999999"></div>
+
+{include file="../public/tpl/index/count.html" /}
+{/block}
+
+{block name="footer"}
+<script src="__IMAGES__/pg/js/lazy.js"></script>
+<script language="javascript">
+    $("#anlihead").addClass("active");
+</script>
+{/block}

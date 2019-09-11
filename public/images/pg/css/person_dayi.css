@@ -1,0 +1,26 @@
+#service-scope .project{width:721px;background-color: white;display: block;text-decoration: none;color: black;margin-bottom: 10px; }
+#service-scope .project a{color: black;text-decoration: none}
+#service-scope .project p{height: 60px;margin-top: 0px;}
+#service-scope .project img{width: 40px;height: 40px;border-radius: 50px;margin: 20px;}
+#service-scope .project span{color: #999999;font-size: 16px;}
+#service-scope .project div span:hover{text-decoration:underline}
+#service-scope .project h2{padding:0 80px;margin: 10px 0;font-size: 18px;font-weight: 600;color: #444444;line-height: 25px;}
+#service-scope .project h2:hover{color: red;}
+#service-scope .project div{margin: 10px 20px 0px 80px;font-size: 14px;line-height: 25px; color: #444444;position: relative}
+#service-scope .project div span{color: red;font-size: 14px;position: absolute;right: 0px;bottom: 0px;}
+#service-scope .project b{color:#999999;font-size: 12px;text-indent: 80px;display: block;font-weight: 400;padding-top: 15px;padding-bottom: 20px; }
+#collenction{width: 1040px;border: 1px solid #dcdcdc;margin-left: 160px;background-color: white;height: 50px;margin-bottom: 20px;display: flex}
+#collenction a{text-decoration: none;display: block;text-align: center;line-height: 50px;height: 50px;width:346px; color:#898989 ;font-size: 16px;}
+#collenction .hover{border-top: 3px solid red;color: red;font-weight: 800}
+#collenction a:hover{border-top: 3px solid red;color: red;font-weight: 800}
+#indexnav-top .content{width: 930px;height: 120px;display: flex;justify-content: space-between}
+#caes{width: 1040px;min-width:1040px;margin:45px auto;display: flex;flex-wrap: wrap;margin-left: 160px;}
+#caes button{width: 1040px;height: 50px;border: 1px solid #dcdcdc;background-color: white;outline: none;font-size: 20px;color: #888888}
+#caes button:hover{background-color: #dcdcdc}
+#caes .chooescaes{width: 320px;height: 250px; margin-bottom: 40px;text-decoration: none;margin-right: 40px;}
+#caes .chooescaes:nth-child(3n+0){margin-right: 0px;}
+#caes .chooescaes .img{width: 320px;height: 190px;overflow: hidden;}
+#caes .chooescaes .img img{transition: all 0.25s ease-in-out;}
+#caes .chooescaes .img img:hover{transform: scale(1.1)}
+#caes .chooescaes p{margin: 0px;padding-top: 10px;padding-bottom: 18px;color: black; }
+#caes .chooescaes h3{margin: 0px;font-size: 20px;font-weight: 600;color: black; }

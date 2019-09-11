@@ -1,0 +1,40 @@
+{extend name="layout"}
+
+{block name="header"}
+<script type="text/javascript" src="__IMAGES__/jquery.min.js"></script>
+<link type="text/css" rel="stylesheet" href="__IMAGES__/page_thinkphp.css" />
+<script type="text/javascript" src="__STATIC__/vali/dist/SMValidator.min.js"></script>
+<script type="text/javascript" src="__STATIC__/vali/src/config.js"></script>
+{/block}
+
+{block name="content"}
+<form method="post" class="layui-form">
+    <div class="layui-form-item">
+        <label class="layui-form-label">添加分类</label>
+        <div class="layui-input-block">
+            <input type="text" class="layui-input newsName"  name="name" placeholder="输入分类名">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit="" lay-filter="addNews">立即添加</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+    <input type="hidden" name="pid" value="{$pid}">
+</form>
+{/block}
+
+{block name="footer"}
+<script language="javascript">
+    new SMValidator('form', {
+        submit: function(valid, form) {
+            if(valid) form.submit();
+        },
+        required: '不能为空',
+        fields: {
+            name: 'required|length(1,12)',
+        }
+    });
+</script>
+{/block}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>人才理念</title>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/reset.css">
+    <script src="__IMAGES__/zzz/js/lib/jquery-3.3.1.min.js"></script>
+    <script src="__IMAGES__/zzz/js/lib/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/animate.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/public.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/views/personnel.css">
+    <script src="__IMAGES__/zzz/js/views/pubControll.js"></script>
+</head>
+<body>
+
+{include file="../public/tpl/index/nav.html" /}
+
+<div id="news_head">
+    <div class="title">
+        <h2 id="animation_h2">开放沟通，快乐工作，协作共享，团队至上！</h2>
+        <p id="animation_p">每位员工都是伙伴、可造之才，发展员工，促进员工与企业共同成长</p>
+    </div>
+</div>
+<div class="pub_link">
+    <div id="new_chooes">
+        <p class="active"><a href="#per_f" class="active">人才政策</a></p>
+        <p><a href="#per_f_text" >人才理念</a></p>
+        <!-- <p><a href="#per_s" >诚聘精英</a></p> -->
+    </div>
+</div>
+<div class="per_f" id="per_f">
+    <div class="per_f_text">
+        <h1 class="h2">人才政策 </h1>
+        <h2 class="h3"><!--Talent Policy--> </h2>
+        <div class="per_f_tit">
+            &nbsp;&nbsp;&nbsp;&nbsp;以人为本，打造基于能力和绩效的人才政策<br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;每位员工都是伙伴和可造之才，围绕员工需求和感受经营、发展员工，促进员工与企业共同成长<br>
+        </div>
+    </div>
+    <div class="per_f_img">
+        <img src="__IMAGES__/zzz/imgs/personnel/images/undefined_02.jpg" width="600" height="600" alt="">
+    </div>
+    <div class="per_f_img">
+        <img src="__IMAGES__/zzz/imgs/personnel/66.jpg" alt="">
+    </div>
+    <div class="per_f_text" id="per_f_text">
+        <h1 class="h2">人才理念 </h1>
+        <h2 class="h3"><!--Talent Policy--> </h2>
+        <div class="per_f_tit">
+            <img src="__IMAGES__/zzz/imgs/personnel/-1.png" width="500" alt="">
+        </div>
+    </div>
+</div>
+
+<!--
+<div class="per_s" id="per_s">
+    <h1 class="h2">诚聘精英 </h1>
+    <h2 class="h3">Talent Policy </h2>
+</div>
+
+
+<div class="per_tab_h pub_bgc" >
+    <div class="per_tab_1">招聘职位</div>
+    <div class="per_tab_2">招聘人数</div>
+    <div class="per_tab_3">工作地点</div>
+    <div class="per_tab_4">发布时间</div>
+    <div class="per_tab_5"> </div>
+</div>
+
+{volist name="list" id="vo"}
+<div class="per_tab_t " >
+    <div class="per_tab_1">{$vo.name}</div>
+    <div class="per_tab_2">{$vo.num}人</div>
+    <div class="per_tab_3">{$vo.area}</div>
+    <div class="per_tab_4">{$vo.time|date='Y-m-d',###}</div>
+    <div class="per_tab_5"></div>
+</div>
+<div class="per_tab_down" >
+    <div class="per_tab_pro per_f_tit">{$vo.des}</div>
+</div>
+{/volist}
+-->
+
+
+
+<div style="height: 130px;width: 100%;"></div>
+
+{include file="../public/tpl/index/foot.html" /}
+
+<script>
+    $(function () {
+        $(".per_tab_t").eq(0).addClass("per_tab_c")
+        $(".per_tab_t").eq(0).next(".per_tab_down").show()
+        $(".per_tab_t").click(function () {
+            $(this).toggleClass("per_tab_c")
+            if($(this).next(".per_tab_down").css("display") == "none"){
+                $(this).next(".per_tab_down").slideDown(500)
+            }else{
+                $(this).next(".per_tab_down").slideUp(500)
+            }
+
+        })
+        $("#new_chooes a").click(function () {
+            var $index = $(this).index()
+            if($index==0){
+                $(window).scrollTop(1000)
+            }else if($index == 1){
+                $(window).scrollTop(1500)
+            }else{
+                $(window).scrollTop(2300)
+            }
+        })
+    })
+</script>
+<script>
+    $(window).on("scroll",function () {
+        console.log($(window).scrollTop())
+        if($(window).scrollTop() > 200){
+            $("#per_f").addClass("a-fadeinL")
+        }
+    })
+    $(function () {
+        $("#nav_job2").addClass("active")
+        $("#nav_job").addClass("active")
+    })
+</script>
+<script src="__IMAGES__/zzz/js/publics.js"></script>
+</body>
+</html>

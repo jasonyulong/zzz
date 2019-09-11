@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="UTF8">
+<head>
+    <meta charset="UTF-8">
+    <title>组织架构</title>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/reset.css">
+    <script src="__IMAGES__/zzz/js/lib/jquery-3.3.1.min.js"></script>
+    <script src="__IMAGES__/zzz/js/lib/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/animate.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/public.css">
+    <script src="__IMAGES__/zzz/js/views/pubControll.js"></script>
+    <script src="__IMAGES__/zzz/js/views/aboutUS_pub.js"></script>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/views/aboutUS.css">
+    <style>
+        body{background-color: #F4F4F4}
+    </style>
+</head>
+<body>
+
+{include file="../public/tpl/index/nav.html" /}
+{include file="../public/tpl/index/head.html" /}
+
+<div style="" class="jiagou" id="jiagou">
+    <h2 class="h2">组织架构</h2>
+    <h3 class="h3"><!--Organizational Structure--> </h3>
+    <p>
+        中兴瑞华（北京）企业管理有限公司<br>
+        ZhongXingRuiHua (Beijing) enterprise management co. LTD
+    </p>
+    <div style="display: block;padding: 20px"><img  src="__IMAGES__/zzz/imgs/aboutUS/zzz.png" width="100%" alt=""></div>
+</div>
+
+{include file="../public/tpl/index/foot.html" /}
+
+<script src="__IMAGES__/zzz/js/publics.js"></script>
+<script>
+    $(function () {
+        setTimeout(function () {
+            $("#jiagou").addClass("active")
+            $("#jiagou").parent("p").addClass("active")
+            $("#nav_aboutUS").addClass("active")
+            $("#nav_aboutUS2").addClass("active")
+        },300)
+    })
+</script>
+</body>
+</html>

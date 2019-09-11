@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="UTF8">
+<head>
+    <meta charset="UTF-8">
+    <title>员工风采</title>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/reset.css">
+    <script src="__IMAGES__/zzz/js/lib/jquery-3.3.1.min.js"></script>
+    <script src="__IMAGES__/zzz/js/lib/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/animate.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/public.css">
+    <script src="__IMAGES__/zzz/js/views/pubControll.js"></script>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/views/Culture.css">
+    <style>
+        .wrap{position: relative;}
+        .content{height: 800px;display: block;background: url("__IMAGES__/zzz/imgs/Curture/wall.jpg")}
+        .content div{display: inline-block;transition: 0.25s ease-in-out;width:20%;position: absolute}
+        .content div img{width: 100%;border: 5px black double;padding: 10px;background-color: white; }
+        .wrap .content div:hover{transform: scale(1.6) !important;z-index: 10000}
+        /*.content div:nth-child(1){left:41%;top: 18%;transform: rotate(20deg); }
+        .content div:nth-child(2){left:2%;top: 56%;transform: rotate(258deg); }
+        .content div:nth-child(3){left:30%;top: 30%;transform: rotate(354deg); }
+        .content div:nth-child(4){left:38%;top: 52%;transform: rotate(120deg); }
+        .content div:nth-child(5){left:56%;top: 50%;transform: rotate(69deg); }
+        .content div:nth-child(6){left:10%;top: 20%;transform: rotate(147deg); }
+        .content div:nth-child(7){left:55%;top: 76%;transform: rotate(37deg); }
+        .content div:nth-child(8){left:66%;top: 18%;transform: rotate(37deg); }
+        .content div:nth-child(9){left:17%;top: 65%;transform: rotate(37deg); }*/
+    </style>
+</head>
+<body>
+{include file="../public/tpl/index/nav.html" /}
+<div id="news_head">
+    <div class="title">
+        <h2 id="animation_h2">致力于领航中国政企一体化服务新时代！</h2>
+        <p id="animation_p">终于客户，兴于员工，担当高效，严谨创新，瑞于奋斗，华于团队。</p>
+    </div>
+</div>
+<div class="pub_link">
+    <div id="new_chooes">
+        <p ><a href="{:url('index/index/culture')}" >企业精神</a></p>
+        <p><a href="{:url('index/index/idea')}" >发展理念</a></p>
+        <p class="active"><a href="{:url('index/index/staff')}" class="active" >员工风采</a></p>
+    </div>
+</div>
+<div class="wrap" >
+    <h2 class="h2">员工风采</h2>
+    <h3 class="h3"> <!--Employees' demeanor--></h3>
+    <div class="content">
+        {volist name="list" id="vo"}
+        <div><a href="{:url('index/article/info',['id'=>$vo['id']])}" target="_blank" class="hover"><img class="pic1" src="{$vo.pic}" /></a></div>
+        {/volist}
+    </div>
+</div>
+{include file="../public/tpl/index/foot.html" /}
+<script>
+    $(window).on("scroll",function () {
+        setInterval(function () {
+            if($(window).scrollTop() > 150){
+                $(".wrap").addClass("a-fadeinR")
+            }
+        },30)
+    })
+    $(function () {
+        $("#nav_culture2").addClass("active")
+        $("#nav_culture").addClass("active")
+    })
+</script>
+<script src="__IMAGES__/zzz/js/publics.js"></script>
+<script>
+    $(function () {
+        console.log($(".content div").length)
+        for(var i= 0;i<$(".content div").length;i++){
+            $(".content div").eq(i).css({"left":Math.floor(Math.random() * 80) +"%","top":Math.floor(Math.random() * 80)+"%","transform":"rotate("+Math.random()*360+"deg)"})
+        }
+    })
+</script>
+</body>
+</html>

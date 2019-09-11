@@ -1,0 +1,64 @@
+{extend name="layout"}
+
+{block name="header"}
+<link rel="stylesheet" href="__IMAGES__/layui/css/main.css" media="all" />
+{/block}
+
+{block name="content"}
+<div class="row">
+ <div class="sysNotice col">
+  <blockquote class="layui-elem-quote title">最新文章</blockquote>
+  <table class="layui-table" lay-skin="line">
+   <colgroup>
+    <col>
+    <col width="110">
+   </colgroup>
+   <tbody class="hot_news">
+   {volist name="artlist" id="vo"}
+   <tr><td align="left"><a href="{:url('index/article/info?id='.$vo['id'])}" target="_blank">{$vo.title}</a></td></tr>
+   {/volist}
+   </tbody>
+  </table>
+ </div>
+ <div class="sysNotice col">
+  <blockquote class="layui-elem-quote title">基本信息</blockquote>
+  <table class="layui-table">
+   <colgroup>
+    <col width="150">
+    <col>
+   </colgroup>
+   <tbody>
+
+   <tr>
+    <td>会员总数</td>
+    <td class="author">{$member_all}</td>
+   </tr>
+   <tr>
+    <td>文章总数</td>
+    <td class="homePage">{$article_all}</td>
+   </tr>
+   <tr>
+    <td>链接总数</td>
+    <td class="dataBase">{$link_sum}</td>
+   </tr>
+   </tbody>
+  </table>
+  <blockquote class="layui-elem-quote title">热门<i class="iconfont icon-new1"></i></blockquote>
+  <table class="layui-table" lay-skin="line">
+   <colgroup>
+    <col>
+    <col width="110">
+   </colgroup>
+   <tbody class="hot_news">
+   {volist name="hotlist" id="vo"}
+   <tr><td align="left"><a href="{:url('index/article/info?id='.$vo['id'])}" target="_blank">{$vo.title}</a></td><td>{$vo.time|date='Y-m-d',###}</td></tr>
+   {/volist}
+   </tbody>
+  </table>
+ </div>
+</div>
+{/block}
+
+{block name="footer"}
+<script type="text/javascript" src="__IMAGES__/layui/js/main.js"></script>
+{/block}

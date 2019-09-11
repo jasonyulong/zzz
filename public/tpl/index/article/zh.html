@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>综合业务</title>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/reset.css">
+    <script src="__IMAGES__/zzz/js/lib/jquery-3.3.1.min.js"></script>
+    <script src="__IMAGES__/zzz/js/lib/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/animate.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/public.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/views/business.css">
+    <script src="__IMAGES__/zzz/js/views/pubControll.js"></script>
+    <script src="__IMAGES__/zzz/js/publics.js"></script>
+</head>
+<body>
+{include file="../public/tpl/index/nav.html" /}
+<div id="news_head">
+    <div class="title">
+        <h2 id="animation_h2">结果第一，过程第二，理由靠后，善始善终！</h2>
+        <p id="animation_p">诚信为本，德才兼备；担当和敬业第一，能力和资源第二。</p>
+    </div>
+</div>
+<div class="pro_down">
+    <div class="pro_downs">
+        <div class="img-ioc">
+            <img src="__IMAGES__/zzz/imgs/business/37.png"  alt="">
+            <img src="__IMAGES__/zzz/imgs/business/37x.png"   alt="">
+        </div>
+        <div class="title_content">
+            <p >政府服务外包</p>
+            <em >Government service outsourcing</em>
+        </div>
+    </div>
+</div>
+<div class="fadeIn">
+    <div class="down">
+        {volist name="one" id="vo" key="k"}
+        <a href="{:url('index/article/info',['id'=>$vo['id']])}" class="project">
+            <div class="pro">
+                <p><em></em><strong></strong></p>
+                <div class="tit">{$vo.content}</div>
+            </div>
+        </a>
+        {/volist}
+    </div>
+</div>
+<div class="pro_down">
+    <div class="pro_downs">
+        <div class="img-ioc">
+            <img src="__IMAGES__/zzz/imgs/business/39.png"  alt="">
+            <img src="__IMAGES__/zzz/imgs/business/39x.png"   alt="">
+        </div>
+        <div class="title_content">
+            <p>企业商务服务</p>
+            <em >Enterprise service outsourcing</em>
+        </div>
+    </div>
+</div>
+<div class="fadeIn">
+    <div class="down">
+        {volist name="two" id="vo" key="k"}
+        <a href="{:url('index/article/info',['id'=>$vo['id']])}" class="project">
+            <div class="pro">
+                <p><em></em><strong></strong></p>
+                <div class="tit">{$vo.content}</div>
+            </div>
+        </a>
+        {/volist}
+    </div>
+</div>
+
+
+
+<div id="service" >
+
+    <div class="wrap_s" >
+        <div class="img_wrap">
+            <img src="__IMAGES__/zzz/imgs/business/42.jpg" width="600" height="467" alt="">
+        </div>
+        <div class="text-wrap">
+            <div class="text-tit" >企业使命</div>
+            <h2  class="text-h2" style="color: #FF7302;font-weight: bold" >Enterprise mission</h2>
+            <article class="text-art">
+                政企互联，助力共赢。
+                </article>
+        </div>
+    </div>
+    <div class="wrap_s">
+        <div class="img_wrap">
+            <img src="__IMAGES__/zzz/imgs/business/43.jpg" width="600" height="467" alt="">
+        </div>
+        <div class="text-wrap">
+            <div class=" h2">企业愿景</div>
+            <h2  class="text-h2">vision</h2>
+            <article class="text-art">
+                中国政企服务领导品牌。
+                </article>
+        </div>
+    </div>
+
+</div>
+
+{include file="../public/tpl/index/foot.html" /}
+
+<script>
+    $(function () {
+        $("#second_Head").hide()
+        $(".pro_down").click(function () {
+            $(this).find(".img-ioc").toggleClass("img-ioc-change")
+            $(this).find("img").first().toggle()
+            $(this).find("img").last().toggle()
+            $(this).find("p").toggleClass("p")
+            $(this).find("em").toggleClass("em")
+            $(this).find(".pro_downs").toggleClass("pro_downs_bg")
+            $(this).toggleClass("pro_change");
+            if($(this).next().css("display") == "none"){
+                $(this).next().slideDown(500)
+            }else{
+                $(this).next().slideUp(500)
+            }
+
+        })
+        $("#nav_zh2").addClass("active")
+        $("#nav_zh").addClass("active")
+    })
+</script>
+</body>
+</html>

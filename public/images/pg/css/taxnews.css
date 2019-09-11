@@ -1,0 +1,76 @@
+body{margin: 0px;}
+body{background-color: #F0F0F0}
+#newscontent{width: 1200px;min-width: 1200px;display: flex;margin: 50px auto;}
+/*左侧悬浮栏*/
+#newscontent .news-left{width: 158px;margin-right: 33px;position: fixed}
+#newscontent .news-left .pro{width: 120px;display: flex;flex-wrap: wrap;}
+#newscontent .news-left .active{width: 120px;height:40px;background-color: red;border-radius: 20px;border: 0px;color: white;font-size: 18px;margin-bottom: 10px;}
+#newscontent .news-left button{width: 120px;height: 40px;border: 0px;background-color: #F0F0F0;margin-bottom: 10px;font-size: 18px;outline: none;border-radius: 20px; }
+/*右侧内容*/
+#newscontent .news-right{width: 280px;margin-left: 41px;display: flex;flex-wrap: wrap;height: 1130px;}
+#newscontent .news-right h4{padding: 0;margin: 0;color: red;font-weight: 600;padding-bottom: 25px;font-size: 20px;}
+#newscontent .news-right .news-right-pro{width: 230px;height: 60px;display: flex;margin-bottom: 5px;}
+#newscontent .news-right .news{width: 280px;background-color: white;padding: 25px 20px 40px 25px;height: 724px;}
+#newscontent .news-right .news .newslist{display: flex;align-content: space-between;flex-wrap: wrap;height: 614px }
+#newscontent .news-right  a{text-decoration: none}
+#newscontent .news-right .news-right-pro em{width: 30px;height: 30px;border: 1px solid red; border-radius: 50%;position: absolute;text-align: center;color: red;line-height: 30px;font-size: 16px;}
+#newscontent .news-right .news-right-pro .em1{background-color: white;color: red;border: 1px solid red}
+/*#newscontent .news-right .news-right-pro p{height: 40px;line-height: 20px;color: black;padding-left: 40px;font-size: 16px;text-overflow: ellipsis;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;  }*/
+#newscontent .news-right .news-right-pro p{height: 40px;line-height: 20px;color: black;padding-left: 40px;font-size: 16px;text-overflow: ellipsis;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;  }
+#newscontent .news-right .news-right-pro p:hover{color: red;}
+#newscontent .news-right .gong{width: 280px;height: 320px;background-color: white;margin-top: 40px;}
+#newscontent .news-right .gong h3{text-indent: 20px;color: red;font-size: 20px;font-weight: 600}
+#newscontent .news-right .gong p{padding: 5px 20px;font-size: 16px;}
+#newscontent .news-right .gong div{margin: 0 auto;width: 155px;height: 155px;}
+/*主要内容*/
+#newscontent .news-body{width: 721px;display: flex;flex-wrap: wrap;margin-left: 200px;background-color:  #F0F0F0}
+#newscontent .news-body .project a{color: black;text-decoration: none}
+#newscontent .news-body .project p{height: 60px;margin-top: 0px;}
+#newscontent .news-body .project img{width: 40px;height: 40px;border-radius: 50px;margin: 20px;}
+#newscontent .news-body .project span{color: #999999;font-size: 16px;}
+#newscontent .news-body .project div span:hover{text-decoration:underline}
+#newscontent .news-body .project h2{padding:0 80px;margin: 10px 0;font-size: 18px;font-weight: 600;color: #444444;line-height: 25px;}
+#newscontent .news-body .project h2:hover{color: red;}
+#newscontent .news-body .project div{margin: 10px 20px 0px 80px;font-size: 14px;line-height: 25px; color: #444444;position: relative}
+#newscontent .news-body .project div span{color: red;font-size: 14px;position: absolute;right: 0px;bottom: 0px;}
+#newscontent .news-body .project b{color:#999999;font-size: 12px;text-indent: 80px;display: block;font-weight: 400;padding-top: 15px;padding-bottom: 20px; }
+#newscontent .news-body h3:hover{color: red}
+/*
+新闻列表页主要内容*/
+#newscontent .news-content h1{font-size: 30px;font-weight: 600;line-height:50px;background-color:white;padding: 35px;margin: 0 }
+#newscontent .news-content .box1 img{border-radius: 50%;}
+#newscontent .news-content .box1 p span{margin-left: 20px;line-height: 35px}
+#newscontent .news-content p{font-size: 16px;margin-top: 40px;}
+#newscontent .news-content p strong{font-size: 30px;font-weight: 600;color: red}
+#newscontent .news-content form{position: relative;margin-left: 67px;display: flex;flex-grow:1}
+#newscontent .news-content form img{position: absolute;left: -67px;top:0;}
+#newscontent .news-content form textarea{width: 500px;height: 67px;text-indent: 20px;border: 0px;outline:none;font-size: 18px; }
+#newscontent .news-content form input[type=submit]{width: 150px;height: 67px;border: 0px;position: absolute;right: 0;bottom: 0px;
+    outline: none;background-color: red;color: white;font-size: 25px;vertical-align: top;display: block;}
+#newscontent .news-content .asnlist img{border-radius: 50%;position: absolute;}
+#newscontent .news-content .asnlist .anspro p{margin: 0px;padding: 0px;font-size: 14px;}
+#newscontent .news-content .asnlist .anspro div{padding: 10px 30px 10px 0px;font-size: 18px; }
+#newscontent .news-content .asnlist .anspro button{outline: none;border: none;background-color: transparent;text-align: left;padding: 0px;color: #A6A6A6 }
+#newscontent .news-content .asnlist button:last-child{background: url("../images/icons/08_thumbs_up-512.png")no-repeat;position: absolute;right: 0px;bottom: 0px;width: 50px;padding-left: 25px;}
+#newscontent .news-content h3{margin: 64px 0px 10px 0px;font-size: 30px;color: red;font-weight: 600}
+#newscontent .news-left .projects span{width:45px;height: 45px;display: inline-block;line-height: 45px;text-align: center }
+#newscontent .news-left .projects strong{font-size: 20px;font-weight: 500;vertical-align: middle;}
+#taxhread{width: 720px;height: 288px;display: flex;flex-wrap: wrap;}
+#taxhread a{position: relative;text-decoration: none }
+#taxhread a p{height: 50px;color:white;font-size: 25px;position: absolute;bottom: 0px;text-indent: 20px;margin: 0px;width: 480px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;
+   /* background: -o-linear-gradient(red, blue); !* Opera 11.1 - 12.0 *! background: -moz-linear-gradient(red, blue); !* Firefox 3.6 - 15 *!*/background: linear-gradient(rgba(128,117,117,0.1),rgba(0,0,0,0.9)); /* 标准的语法 */ }
+#taxhread .firstnews{width: 480px;height: 288px;display: block;margin-right: 10px;box-shadow: 0 -100px 10px 0px black inset  /*底部阴影*/ ;overflow: hidden}
+#taxhread .firstnews img{width: 480px;height: 288px;display: block;margin-right: 10px;box-shadow: 0 -100px 10px 0px black inset  /*底部阴影*/ ;transition:all 0.25s ease-in-out;}
+#taxhread .firstnews img:hover{transform: scale(1.1)}
+#taxhread .firstnews:hover p{color: red}
+#taxhread .second{width: 234px;height: 137px;overflow: hidden}
+#taxhread .second img{transition: all 0.25s ease-in-out}
+#taxhread .second img:hover{transform: scale(1.1)}
+#taxhread .second p{font-size: 18px;width: 230px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;height: 30px;}
+#taxhread .second:hover p{color: red}
+.news-body a{text-decoration: none}
+.news-body .demo {display: flex;border-bottom: 1px solid #dcdcdc;background-color: white;}
+.news-body .demo img{display: block}
+.news-body .demo div h2{color: black;text-decoration: none;margin-left: 20px;margin-top: 0px;height: 55px;font-size: 20px;font-weight: 600;padding-top: 5px;}
+.news-body .demo div h2:hover{color: red}
+.news-body .demo div p{text-indent: 20px;margin: 0px;color: #666666}

@@ -1,0 +1,51 @@
+{extend name="layout"}
+
+{block name="header"}
+<script type="text/javascript" src="__IMAGES__/jquery.min.js"></script>
+<link rel="stylesheet" href="__IMAGES__/page_thinkphp.css">
+{/block}
+
+{block name="content"}
+<div class="layui-inline">
+    <div class="layui-input-inline">
+        <h3>招聘列表</h3>
+    </div>
+</div>
+<blockquote class="layui-elem-quote news_search">
+    <form method="get">
+        <div class="layui-inline">
+            <div class="layui-input-inline">
+                <input type="text" name="name" value="{$name}" placeholder="输入职位名" class="layui-input search_input">
+            </div>
+            <input type="submit" class="layui-btn search_btn" value="查询">
+        </div>
+    </form>
+</blockquote>
+<div class="layui-form news_list">
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <th>职位名</th>
+            <th>招聘人数</th>
+            <th>添加时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        {volist name="list" id="vo"}
+        <tr>
+            <td class="center">{$vo.name}</td>
+            <td class="center">{$vo.num}</td>
+            <td class="center">{$vo.time|date='Y-m-d H:i:s',###}</td>
+            <td>
+                <a href="{:url('edit?id='.$vo['id'])}" class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a>
+                <a class="layui-btn layui-btn-danger layui-btn-mini news_del" href="javascript:if(confirm('确实要删除吗?'))location='{:url('del?id='.$vo['id'])}'"><i class="layui-icon"></i> 删除</a>
+            </td>
+        </tr>
+        {/volist}
+    </table>
+</div>
+{$list->render()}
+{/block}
+
+{block name="footer"}
+{/block}

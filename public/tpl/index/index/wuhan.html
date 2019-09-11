@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分公司 - {$sysinfo.title}</title>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/reset.css">
+    <script src="__IMAGES__/zzz/js/lib/jquery-3.3.1.min.js"></script>
+    <script src="__IMAGES__/zzz/js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.2&ak=y9XrqIdFduE2IxUeu10pKhsCf5kNEXUv"></script>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/public.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/views/contentUS.css">
+    <script src="__IMAGES__/zzz/js/views/pubControll.js"></script>
+    <style>
+        body{background-color: #EEEEEE}
+    </style>
+</head>
+<body>
+
+{include file="../public/tpl/index/nav.html" /}
+<section>
+    <div id="beijingmap"></div>
+    <div style="width: 100%; background-color: white ">
+        <div  class="map-wrap" style="">
+            <div class="map-tit" style="">
+                <h1 >中兴瑞华分公司</h1>
+                <p class="tu1">湖北省武汉市桥口区汉西一路南国大武汉大家装H座18楼</p>
+                <p class="tu2">027-83530021</p>
+                <p class="tu3">工作日：8:30-17:30 </br></br>
+                  </p>
+                <p class="tu4">地铁线路：1号线汉西一路C出口 距离760米<br>
+                    公交线路：654路 718路 555路至汉西一路站下车</p>
+            </div>
+            <div>
+                <img src="__IMAGES__/zzz/imgs/responsibliity/77.jpg" width="580" height="470" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="f-self-map">
+        <div >
+            <h2 >公司简介</h2>
+            <span ></span>中兴瑞华发挥政府服务外包的核心优势,助力改府职能转变和服务型政府打造,为地方政府提供招商引资策划与代理、改府园区规划与咨询、园
+            区整合、政企互联等专业政府园区服务和咨词,打道“政府服务外包专家”知名品牌!<br>
+            <span ></span>中兴瑞华发挥企业商务服务专业价值,面向企业提供财税咨询,税务筹划,工商、银行、税务和记账代理,人力资源,管理咨询,企业上市,商
+            标知识产权,投融资等专业服务,构建一站式品牌化企业商务服务平台,打造“企业商务服务专家”品牌,全面助力企业核心竞争力提升。
+        </div>
+    </div>
+</section>
+
+
+
+{include file="../public/tpl/index/foot.html" /}
+<script>
+    var map = new BMap.Map("beijingmap");
+    var point = new BMap.Point(114.230853,30.594729);
+    map.centerAndZoom(point,16);
+    var marker = new BMap.Marker(point);// 创建标注
+    map.addOverlay(marker);             // 将标注添加到地图中
+    marker.disableDragging();
+</script>
+<script>
+
+    $(function () {
+        $("#indexNav").hide()
+        $("#second_Head").show()
+        $("#nav_us").addClass("active")
+        $(".fdialog-close").click(function () {
+            $(".fdialog-main").hide();
+        })
+        $("#ico1").click(function () {
+            $(".fdialog-main").show();
+        })
+        $(".fdialog-main").mouseup(function () {
+            return false
+        })
+        $(document).mouseup(function()
+        {
+            $(".fdialog-main").hide()
+        });
+    })
+</script>
+</body>
+</html>

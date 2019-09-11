@@ -1,0 +1,16 @@
+#collenction{width: 1040px;border: 1px solid #dcdcdc;margin-left: 160px;background-color: white;height: 50px;margin-bottom: 20px;display: flex}
+#collenction a{text-decoration: none;display: block;text-align: center;line-height: 50px;height: 50px;width:346px; color:#898989 ;font-size: 16px;}
+#collenction .hover{border-top: 3px solid red;color: red;font-weight: 800}
+#collenction a:hover{border-top: 3px solid red;color: red;font-weight: 800}
+.demo img{display: block}
+.demo div h2{color: black;text-decoration: none;margin-left: 20px;margin-top: 0px;height: 55px;font-size: 20px;}
+.demo div p{text-indent: 20px;margin: 0px;color: #666666}
+#news{margin-left: 160px;background-color: white;padding: 5px;margin-bottom: 65px;}
+#news a{text-decoration: none;color: black}
+#news .project{width: 1000px;margin: 20px;display: block;margin-bottom: 0px;padding-bottom: 20px;border-bottom: 1px solid #dcdcdc;display: flex}
+#news .project .img{width:160px;height: 100px; }
+#news .project .proright{padding: 20px;}
+#news .project .proright h3{margin: 0px;font-size: 20px;font-weight: 600}
+#news .project .proright p{margin: 0px;margin-top: 20px;color: #999999}
+#news button{width: 1000px;margin: 20px;height: 50px;border: 1px solid #dcdcdc;background-color: white;font-size: 20px;outline: none;margin-top:20px;color: #bbbbbb }
+#indexnav-top .content{width: 930px;height: 120px;display: flex;justify-content: space-between}

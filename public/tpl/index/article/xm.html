@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>公益項目 - {$sysinfo.title}</title>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/reset.css">
+    <script src="__IMAGES__/zzz/js/lib/jquery-3.3.1.min.js"></script>
+    <script src="__IMAGES__/zzz/js/lib/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/animate.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/public.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/views/publicProject.css">
+    <script src="__IMAGES__/zzz/js/views/pubControll.js"></script>
+    <style>
+        .pub_s_r{display: none}
+    </style>
+</head>
+<body>
+{include file="../public/tpl/index/nav.html" /}
+<div id="news_head">
+    <div class="title">
+        <h2 id="animation_h2">弘扬扶贫济困传统美德，推进慈善事业发展！</h2>
+        <p id="animation_p">共同架起慈善的桥梁，建设文明祥和、美好温馨的美丽世界！</p>
+    </div>
+</div>
+<div class="pub_link">
+    <div id="new_chooes">
+        <p ><a href="{:url('index/article/ln')}" >公益理念</a></p>
+        <p class="active"><a href="{:url('index/article/xm')}" class="active" >公益项目</a></p>
+    </div>
+</div>
+<div class="pub_f">
+    <h2 class="h2">公益项目</h2>
+    <h3 class="h3"> Public welfare project </h3>
+</div>
+
+
+<div class="pub_s">
+    <div class="pub_s_l">
+        <div id="myCarousel" class="carousel slide">
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner">
+                {volist name="pics" id="vo" key="k"}
+                <div class="item {if condition="$k==1"}active{/if}">
+                    <img src="{$vo.pic}" alt="First slide">
+                </div>
+                {/volist}
+            </div>
+            <span id="prev"><img src="__IMAGES__/zzz/imgs/publicProject/42.png" alt=""></span>
+            <span id="next"><img src="__IMAGES__/zzz/imgs/publicProject/43.png" alt=""></span>
+        </div>
+    </div>
+    <div id="fater"></div>
+    {volist name="pics" id="vo"}
+    <div class="pub_s_r">
+        <div></div>
+        <h3>{$vo.title}</h3>
+        <blockquote>{$vo.content}</blockquote>
+        <a href="{:url('index/article/info',['id'=>$vo['id']])}"><span>查看详情</span><img src="__IMAGES__/zzz/imgs/publicProject/41.png" alt=""></a>
+    </div>
+    {/volist}
+</div>
+
+{volist name="list" id="vo"}
+<a href="{:url('index/article/info',['id'=>$vo['id']])}" class="prolist">
+    <div class="pro">
+        <h3>{$vo.time|date='Y-m-d',###}</h3>
+        <p>{$vo.title}</p>
+        <div>{$vo.content}</div>
+    </div>
+</a>
+{/volist}
+
+
+<div id="pagination">
+    {$list->render()}
+</div>
+
+{include file="../public/tpl/index/foot.html" /}
+
+<script>
+    $(function () {
+        $("#myCarousel").carousel({interval:100000})
+        var pro = $(".pub_s_r")
+        $(".pub_s_r").eq(0).show()
+        i=0
+        $('#myCarousel').on('slide.bs.carousel', function () {
+        })
+        $("#prev").click(function () {
+            $("#myCarousel").carousel("prev")
+            i--
+            if(i>pro.length-1){i=0;}
+            $(".pub_s_r").eq(i).show().siblings(".pub_s_r").hide()
+        })
+        $("#next").click(function () {
+            $("#myCarousel").carousel("next")
+            i++
+            if(i>pro.length-1){i=0;}
+            $(".pub_s_r").eq(i).show().siblings(".pub_s_r").hide()
+        })
+        $(".pub_s_r a").hover(function () {
+            $(this).find("img").animate({
+                right:-10,
+            },300)
+        },function () {
+            $(this).find("img").animate({
+                right:0
+            },300)
+        })
+
+    })
+</script>
+<script>
+    $(window).on("scroll",function () {
+        if($(window).scrollTop() > 300){
+            $(".pub_s").addClass("a-fadeinL")
+        }
+    })
+    $(function () {
+        $(".prolist").hover(function () {
+            $(this).css({"border-bottom":"1px solid transparent"})
+            $(this).prev().css({"border-bottom":"1px solid transparent"})
+        },function () {
+            $(this).prev().css({"border-bottom":"1px solid #dcdcdc"})
+            $(this).css({"border-bottom":"1px solid #dcdcdc"})
+        })
+    })
+    $(function () {
+        $("#nav_ln2").addClass("active")
+        $("#nav_ln").addClass("active")
+    })
+</script>
+<script src="__IMAGES__/zzz/js/publics.js"></script>
+</body>
+</html>

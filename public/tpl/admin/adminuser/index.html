@@ -1,0 +1,52 @@
+{extend name="layout"}
+
+{block name="header"}
+<script type="text/javascript" src="__IMAGES__/jquery.min.js"></script>
+<link type="text/css" rel="stylesheet" href="__IMAGES__/page_thinkphp.css" />
+<script type="text/javascript" src="__STATIC__/vali/dist/SMValidator.min.js"></script>
+<script type="text/javascript" src="__STATIC__/vali/src/config.js"></script>
+{/block}
+
+{block name="content"}
+<div class="layui-form news_list">
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <th>管理员账号</th>
+            <th>状态</th>
+            <th>最后活动时间</th>
+            <th>添加时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody class="links_content">
+        {volist name="list" id="vo"}
+        <tr>
+            <td>{$vo.username}</td>
+            <td class="center">{if condition="$vo.state eq '1'"}正常{else}禁用{/if}</td>
+            <td class="center">{$vo.lasttime}</td>
+            <td class="center">{$vo.regtime}</td>
+            <td>
+                <a href="{:url('edit?id='.$vo['id'])}" class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a>
+                <a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="8" href="javascript:if(confirm('确实要删除吗?'))location='{:url('del?id='.$vo['id'])}'"><i class="layui-icon"></i> 删除</a>
+            </td>
+        </tr>
+        {/volist}
+        </tbody>
+    </table>
+</div>
+{/block}
+
+{block name="footer"}
+<script language="javascript">
+    new SMValidator('form', {
+        submit: function(valid, form) {
+            if(valid) form.submit();
+        },
+        required: '不能为空',
+        fields: {
+            isname: 'required|length(3,12)',
+        }
+    });
+</script>
+{/block}

@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>联系我们</title>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/reset.css">
+    <script src="__IMAGES__/zzz/js/lib/jquery-3.3.1.min.js"></script>
+    <script src="__IMAGES__/zzz/js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.8&ak=y9XrqIdFduE2IxUeu10pKhsCf5kNEXUv"></script>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/public.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/views/contentUS.css">
+</head>
+<body>
+{include file="../public/tpl/index/nav.html" /}
+<section class="g-secbuttom">
+    <div id="map"></div>
+    <div id="contentUS">
+        <div id="map_address">
+            <div class="h2">联系方式</div>
+            <div class="address_title "><img src="__IMAGES__/zzz/imgs/content/contentUS.jpg" alt=""></div>
+            <div class="add_pro">
+                <div class="add_ico">
+                    <img src="__IMAGES__/zzz/imgs/content/5.png" width="50" height="50" alt="">
+                </div>
+                <section>
+                    <em>企业电话：</em>
+                    <p>(010)-53345721</p>
+                </section>
+            </div>
+            <!--<div class="add_pro">
+                <div class="add_ico">
+                    <img src="__IMAGES__/zzz/imgs/content/8.png" width="50" height="50" alt="">
+                </div>
+                <section>
+                    <em>邮政编码：</em>
+                    <p>100032</p>
+                </section>
+            </div>-->
+            <div class="add_pro">
+                <div class="add_ico">
+                    <img src="__IMAGES__/zzz/imgs/content/6.png" width="50" height="50" alt="">
+                </div>
+                <section>
+                    <em>微信公众号：</em>
+                    <p>gh_25c78b07f954</p>
+                </section>
+            </div>
+            <div class="add_pro">
+                <div class="add_ico">
+                    <img src="__IMAGES__/zzz/imgs/content/7.png" width="50" height="50" alt="">
+                </div>
+                <section>
+                    <em>企业地址：</em>
+                    <p>北京市西城区南滨河路27号院贵都国际B1214</p>
+                </section>
+            </div>
+            <figure>
+                <div>
+                    <img src="__IMAGES__/zzz/imgs/content/5.jpg" width="206" height="206" alt="">
+                </div>
+                <figcaption>
+                    扫一扫关注微信号
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    var map = new BMap.Map("map");
+    var point = new BMap.Point(116.354745,39.887429);
+    map.centerAndZoom(point,16);
+    var marker = new BMap.Marker(point);  // 创建标注
+    map.addOverlay(marker);               // 将标注添加到地图中
+    marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+</script>
+<script>
+    $(function () {
+        $("#indexNav").hide()
+        $("#second_Head").show()
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{$sysinfo.title}</title>
+    <meta name="keywords" content="中兴瑞华,中兴瑞华（北京）企业管理有限公司"/>
+    <meta name="description" content="中兴瑞华（北京）企业管理有限公司成立于2012年1月，总部位于北京，是一家集政府服务外包和企业商务服务于一体的政企服务外包集团，致力于开启中国政企一体化服务新时代！"/>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/reset.css">
+    <script src="__IMAGES__/zzz/js/lib/jquery-3.3.1.min.js"></script>
+    <script src="__IMAGES__/zzz/js/lib/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/animate.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/public.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/views/index.css">
+    <script src="__IMAGES__/zzz/js/views/index.js"></script>
+    <script src="__IMAGES__/zzz/js/publics.js"></script>
+</head>
+<body>
+<div id="indexNav">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-3">
+                <div id="logo">
+                    <img src="__IMAGES__/zzz/imgs/index/logo.png"  alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 col-lg-push-3 col-md-6 col-md-push-3" >
+                <div id="address">
+                    <address>
+                        服务热线:：{$sysinfo.tel}
+                    </address>
+                    <nav>
+                        <div>
+                            <a href="/">首页</a>
+                        </div>
+                        <div>
+                            <a href="{:url('index/index/about')}" id="nav_aboutUS2">关于我们 </a>
+                            <article >
+                                <a href="{:url('index/index/about_ci#zhici')}">董事长致辞</a>
+                                <a href="{:url('index/index/about_structure#jiagou')}">组织架构</a>
+                                <a href="{:url('index/index/about_strategy#zhanlue')}">发展战略</a>
+                            </article>
+                        </div>
+                        <div>
+                            <a href="{:url('index/article/index')}" id="nav_index2">新闻中心  </a>
+                            <article >
+                                <a href="{:url('index/article/index',['id'=>'13'])}">公司要闻</a>
+                                <a href="{:url('index/article/index',['id'=>'14'])}">媒体报道</a>
+                                <a href="{:url('index/article/index',['id'=>'15'])}">行业新闻</a>
+                            </article>
+                        </div>
+
+                        <div><a href="{:url('index/article/zh')}" id="nav_zh2">综合业务</a></div>
+                        <div>
+                            <a href="{:url('index/article/ln')}" id="nav_ln2">社会责任</a>
+                            <article >
+                                <a href="{:url('index/article/ln')}">公益理念</a>
+                                <a href="{:url('index/article/xm')}">公益项目</a>
+                            </article>
+                        </div>
+                        <div>
+                            <a href="{:url('index/index/culture')}" id="nav_culture2">企业文化</a>
+                            <article >
+                                <a href="{:url('index/index/culture')}">企业精神</a>
+                                <a href="{:url('index/index/idea')}">发展理念</a>
+                                <a href="{:url('index/index/staff')}">员工风采</a>
+                            </article>
+                        </div>
+                        <div><a href="{:url('index/index/job')}" id="nav_job2">人才理念</a></div>
+                        <div><a href="{:url('index/index/us')}" id="nav_us2">联系我们</a></div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+        {volist name="bannerlist" id="vo" key="k"}
+        <div class="item {if condition="$k==1"}active{/if}">
+            <img src="{$vo.pic}" alt="First slide">
+            <div class="carousel-caption"> <h2>{$vo.title}</h2></div>
+        </div>
+        {/volist}
+    </div>
+</div>
+<div id="new">
+    <div class="new">
+        <div class="newFirst">
+            <h3>新闻资讯</h3>
+            <h3>NEWS</h3>
+            <div style="position: absolute;width: 3px;background-color: #348BCA;right: 0px;top: 25px;height: 40px;"></div>
+        </div>
+        <div class="newSecond">
+            <div id="myCarouse" class="carousel slide">
+                <div class="carousel-inner">
+                    {volist name="hotart" id="vo" key="k"}
+                    <div class="item {if condition="$k==1"}active{/if}">
+                        <a href="{:url('index/article/info',['id'=>$vo['id']])}">
+                            <h6>{$vo.time|date='Y.m.d',###}</h6>
+                            <p>{$vo.title}</p>
+                            <em>{$vo.content}</em>
+                        </a>
+                    </div>
+                    {/volist}
+                </div>
+                <button id="left"><img src="__IMAGES__/zzz/imgs/index/3.png" alt=""></button>
+                <button id="right"><img src="__IMAGES__/zzz/imgs/index/4.png" alt=""></button>
+            </div>
+        </div>
+        <div class="newThird">
+            <img src="__IMAGES__/zzz/imgs/index/timg.jpg" width="218" height="230" alt="">
+            <h2 >社会责任</h2>
+        </div>
+        <a href="{:url('index/article/info',['id'=>$zr['id']])}" class="newFourth">
+            <h2>{$zr.title}</h2>
+            <p>{$zr.content}</p>
+        </a>
+        <div class="newFifth">
+            <figure>
+                <img src="__IMAGES__/zzz/imgs/index/1.jpg" width="228" height="230" alt="">
+            </figure>
+            <h3>中兴瑞华服务遍布全国</h3>
+            <p>无论您身处何地，我们都提供完善的服务和支持</p>
+            <div id="Carousel" class="carousel slide">
+                <!-- 轮播（Carousel）指标 -->
+                <ol class="carousel-indicators">
+                    <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#Carousel" data-slide-to="1"></li>
+                    <li data-target="#Carousel" data-slide-to="2"></li>
+                </ol>
+                <!-- 轮播（Carousel）项目 -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <a href="{:url('index/index/map')}" class="flex">
+                            <span>上海</span>
+                            <span>广东</span>
+                            <span>深圳</span>
+                            <span>厦门</span>
+                            <span>香港</span>
+                            <span>珠海</span>
+                            <span>珠海</span>
+                            <span>北京</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="{:url('index/index/map')}" class="flex">
+                            <span>上海</span>
+                            <span>广东</span>
+                            <span>深圳</span>
+                            <span>香港</span>
+                            <span>珠海</span>
+                            <span>珠海</span>
+                            <span>珠海</span>
+                            <span>北京</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="{:url('index/index/map')}" class="flex">
+                            <span>上海</span>
+                            <span>广东</span>
+                            <span>深圳</span>
+                            <span>厦门</span>
+                            <span>香港</span>
+                            <span>珠海</span>
+                            <span>珠海</span>
+                            <span>珠海</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="fdialog-main">
+    <i class="fdialog-close" id="fdialog-close"></i>
+    <div class="fdialog-cont cont-0 hide">
+        <img width="200" height="200" src="__IMAGES__/zzz/imgs/content/5.jpg">
+        <a data-pos="0" data-type="weibo-link-click" class="fdialog-link" href="http://weibo.com/baidutranslate">点击查看微博</a>
+        <div class="fdialog-info">
+            <p></p>
+            <p class="text-big">扫描二维码，即刻关注中兴瑞华微信公众号</p>
+        </div>
+    </div>
+</div>
+<div id="foot">
+    <div class="foot">
+        <div class="left">
+            <a href="{:url('index/index/about')}">关于我们</a><span>|</span>
+            <a href="{:url('index/article/index')}">新闻资讯</a><span>|</span>
+            <a href="{:url('index/index/job')}">人力资源</a>
+            <span style="color: white;font-weight: bold;padding-left: 50px">京ICP备18043558号-1</span>
+        </div>
+        <div class="right">
+            <p>版权所有 Copyright © 2018-2019 {$sysinfo.title}</p>
+            <div id="ico1" class="pub-pngBox ico1">
+                <figure class="figure1">
+                    <img class="pub-png filtet1" src="__IMAGES__/zzz/imgs/index/1.png">
+                </figure>
+            </div>
+            <div class="pub-pngBox ico2">
+                <figure class="figure2">
+                    <img class="pub-png filtet2" src="__IMAGES__/zzz/imgs/index/2.png">
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

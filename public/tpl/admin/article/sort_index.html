@@ -1,0 +1,56 @@
+{extend name="layout"}
+
+{block name="header"}
+<script type="text/javascript" src="__IMAGES__/jquery.min.js"></script>
+{/block}
+
+{block name="content"}
+<div class="layui-form news_list">
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <th width="20%">ID</th>
+            <th width="50%">名称</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        {volist name="list" id="vo"}
+        <tr>
+            <td class="center pic-area">{$vo.id}</td>
+            <td class="td-name"><img src="__IMAGES__/folder-yellow-32.png">{$vo.name}</td>
+            <td>
+                <a title="添加子类" href="{:url('sort_add?pid='.$vo['id'])}" class="layui-btn layui-btn-mini news_edit">添加子类</a>
+                <a href="{:url('sort_edit?id='.$vo['id'])}" class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a>
+                <a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="8" href="javascript:if(confirm('确实要删除吗?'))location='{:url('sort_del?id='.$vo['id'])}'"><i class="layui-icon"></i> 删除</a>
+            </td>
+        </tr>
+        {volist name="vo.sub" id="z"}
+        <tr>
+            <td class="center pic-area">{$z.id}</td>
+            <td class="td-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="__IMAGES__/folder-yellow-32.png">{$z.name}</td>
+            <td>
+                <a title="添加子类" href="{:url('sort_add?pid='.$z['id'])}" class="layui-btn layui-btn-mini news_edit">添加子类</a>
+                <a href="{:url('sort_edit?id='.$z['id'])}" class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a>
+                <a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="8" href="javascript:if(confirm('确实要删除吗?'))location='{:url('sort_del?id='.$z['id'])}'"><i class="layui-icon"></i> 删除</a>
+            </td>
+        </tr>
+        {volist name="z.sub" id="y"}
+        <tr>
+            <td class="center pic-area">{$y.id}</td>
+            <td class="td-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="__IMAGES__/folder-yellow-32.png">{$y.name}</td>
+            <td>
+                <a title="添加子类" href="{:url('sort_add?pid='.$y['id'])}" class="layui-btn layui-btn-mini news_edit">添加子类</a>
+                <a href="{:url('sort_edit?id='.$y['id'])}" class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a>
+                <a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="8" href="javascript:if(confirm('确实要删除吗?'))location='{:url('sort_del?id='.$y['id'])}'"><i class="layui-icon"></i> 删除</a>
+            </td>
+        </tr>
+        {/volist}
+        {/volist}
+        {/volist}
+    </table>
+</div>
+{/block}
+
+{block name="footer"}
+
+{/block}

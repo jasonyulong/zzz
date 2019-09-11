@@ -1,0 +1,24 @@
+#reg-content{ position: relative; width: 100%;height: 550px;background: #E5F2F9 url("../img/bg/bg-login.png")no-repeat 200px 20px;}
+#register{width: 300px; height: 430px; position: relative;float: right;
+    margin: 50px 150px;}
+#register-hread{width: 300px; height: 50px; border-radius: 30px 30px 0 0; background-color: #E6E8F2;box-sizing: border-box;padding: 15px 30px}
+.regline{width: 150px;margin-right: 150px;height: 2px;background-color: #596082;box-sizing: border-box}
+#register-box{width: 300px;padding: 0px 20px 50px 20px; height: 403px;background-color: #E6E8F2;border-radius:  0 0 30px 30px;box-sizing: border-box}
+#reg-msg{height: 25px;width: 275px;background-color: #E6E8F2;}
+.msg{height: 20px;width: 100%;color:red}
+#reg-user{width:235px; outline: none;border: 0px;height: 30px; padding-left: 25px;background:white url("../img/icons/icons-usernmae.png") no-repeat ;
+;background-size: 15px 15px; background-position: 5px;}
+#email{width:235px; outline: none;border: 0px;height: 30px; padding-left: 25px;background:white url("../img/icons/icons-mail.png") no-repeat ;
+;background-size: 15px 15px; background-position: 5px;}
+input[type=password]{width:235px; outline: none;border: 0px;height: 30px; padding-left: 25px;background:white url("../img/icons/icons-password.png") no-repeat ;
+;background-size: 15px 15px; background-position: 5px;}
+#reg-code{width:235px; outline: none;border: 0px;height: 30px; padding-left: 25px;background:white url("../img/icons/cions-tips.png") no-repeat ;
+;background-size: 15px 15px; background-position: 5px;}
+input[type=submit]{width:260px;height: 30px;background-color:#0E8FA6;outline: 0px;border: 0px;border-radius: 8px;font-family: 微软雅黑;font-weight: 600;color:#FFFFFF;font-size: 18px; }
+input[type=submit]:hover{box-shadow: black 0 0 1px}
+.bnt-login{font-size: 14px;color: #7E7E7E}
+.romvepass{text-align: right;font-size: 14px; color: red;  left: 160px; position: relative   }
+#codeimg{background-color: white;float: right;margin-left: 5px}
+.success{color: #46a546;border-radius: 50%}
+
+

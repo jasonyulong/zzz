@@ -1,0 +1,73 @@
+{extend name="layout"}
+
+{block name="header"}
+<script type="text/javascript" src="__IMAGES__/jquery.min.js"></script>
+<link type="text/css" rel="stylesheet" href="__IMAGES__/page_thinkphp.css" />
+<script type="text/javascript" src="__STATIC__/vali/dist/SMValidator.min.js"></script>
+<script type="text/javascript" src="__STATIC__/vali/src/config.js"></script>
+{/block}
+
+{block name="content"}
+<form class="layui-form" method="post">
+    <div class="layui-form-item">
+        <label class="layui-form-label">账号</label>
+        <div class="layui-input-block">
+            <input type="text" value="{$info.username}" disabled class="layui-input layui-disabled">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">密码</label>
+        <div class="layui-input-block">
+            <input type="password" name="password" id="password"  placeholder="请输入新密码" class="layui-input pwd">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">确认密码</label>
+        <div class="layui-input-block">
+            <input type="password" placeholder="请确认密码" id="repassword" name="password2" class="layui-input pwd">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户权限</label>
+        <div class="layui-input-block">
+            <input type="checkbox" name="role[01]" title="文章管理" {in name="01" value="$info.role"}checked{/in}>
+            <input type="checkbox" name="role[03]" title="案例库" {in name="03" value="$info.role"}checked{/in}>
+            <input type="checkbox" name="role[04]" title="友情链接" {in name="04" value="$info.role"}checked{/in}>
+            <input type="checkbox" name="role[05]" title="广告管理" {in name="05" value="$info.role"}checked{/in}>
+            <input type="checkbox" name="role[06]" title="招聘管理" {in name="06" value="$info.role"}checked{/in}>
+            <input type="checkbox" name="role[07]" title="系统管理" {in name="07" value="$info.role"}checked{/in}>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">状态</label>
+        <div class="layui-input-block">
+            <input type="radio" name="state" value="1" title="正常" {eq name="info.state" value="1" }checked{/eq}>
+            <input type="radio" name="state" value="0" title="禁用" {eq name="info.state" value="0" }checked{/eq}>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button type="submit" class="layui-btn" lay-submit="" lay-filter="addLinks">修改</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="{$info.id}">
+    <input type="hidden" name="username" value="{$info.username}">
+</form>
+{/block}
+
+{block name="footer"}
+<script type="text/javascript" src="__IMAGES__/layui/page/links/linksAdd.js"></script>
+<script language="javascript">
+    new SMValidator('form', {
+        submit: function(valid, form) {
+            if(valid) form.submit();
+        },
+        required: '请输入内容',
+        fields: {
+            password: 'length(5,12)',
+            password2: 'equal(#password)',
+        }
+    });
+</script>
+{/block}

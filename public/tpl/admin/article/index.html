@@ -1,0 +1,70 @@
+{extend name="layout"}
+
+{block name="header"}
+<link rel="stylesheet" href="__IMAGES__/layui/css/news.css" media="all" />
+<link rel="stylesheet" href="__IMAGES__/layui/css/bootstrap.css">
+
+<script type="text/javascript" src="__IMAGES__/jquery.min.js"></script>
+<script type="text/javascript" src="__STATIC__/vali/dist/SMValidator.min.js"></script>
+<script type="text/javascript" src="__STATIC__/vali/src/config.js"></script>
+{/block}
+
+{block name="content"}
+<div class="layui-inline">
+    <div class="layui-input-inline">
+        <h3>文章列表</h3>
+    </div>
+</div>
+<blockquote class="layui-elem-quote news_search">
+    <form method="get">
+    <div class="layui-inline">
+        <div class="layui-input-inline">
+            <input type="text" name="title" value="{$title}" placeholder="输入文章名称" class="layui-input search_input">
+        </div>
+        <div class="layui-input-inline">
+            <input type="text" name="id" value="{$id}" placeholder="输入文章ID" class="layui-input search_input">
+        </div>
+        <input type="submit" class="layui-btn search_btn" value="查询">
+    </div>
+    </form>
+</blockquote>
+<div class="layui-form news_list">
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th width="30%">标题</th>
+            <th>查看</th>
+            <th>分类</th>
+            <th>发布时间</th>
+            <th width="15%">操作</th>
+        </tr>
+        </thead>
+        {volist name="list" id="vo"}
+        <tr>
+            <td class="center">{$vo.id}</td>
+            <td class="center"><a href="{:url('index/article/info?id='.$vo['id'])}" target="_blank">{$vo.title}</a></td>
+            <td class="center">{$vo.look}</td>
+            <td class="center">{$vo.sortname}</td>
+            <td class="center">{$vo.time|date='Y-m-d H:i:s',###}</td>
+            <td>
+                <a href="{:url('edit?id='.$vo['id'])}" class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a>
+                <a class="layui-btn layui-btn-danger layui-btn-mini news_del" href="javascript:if(confirm('确实要删除吗?'))location='{:url('del?id='.$vo['id'])}'"><i class="layui-icon"></i> 删除</a>
+            </td>
+        </tr>
+        {/volist}
+    </table>
+</div>
+{$list->render()}
+{/block}
+
+{block name="footer"}
+<script language="javascript">
+    new SMValidator('form', {
+        submit: function(valid, form) {
+            if(valid) form.submit();
+        },
+        required: '请输入内容',
+    });
+</script>
+{/block}

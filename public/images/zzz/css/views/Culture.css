@@ -1,0 +1,13 @@
+body{background-color: #F4F4F4}
+#news_head {background-image: url(../../imgs/aboutUS/wernhu1.jpg)}
+.wrap{width: 1200px;margin: 50px auto}
+.sec_father{display: flex;margin: 0 auto;width: 1200px;justify-content: space-between}
+.section_l{display: flex;justify-content: space-between;width: 750px;height: 350px;;flex-direction: column;}
+.section_l .sec_l_t{width: 750px;height: 300px;position: relative}
+.c_tit{position: absolute;bottom: 40px;font-family: 黑体;color: #074dad;font-size: 24px;left: 20px}
+.c_tit:first-line{font-weight:bold;font-size: 24px}
+.section_r{display: flex;width: 437px;flex-direction: column;align-content: space-between;height: 350px;justify-content: space-between}
+.section_r .sec_r{width: 100%;height: 170px;position: relative}
+.section_l .sec_l_b{display: flex;justify-content: space-between;height: 50px;}
+.sec_l_b>div{width: 25%;padding: 5px 0px 5px 28px;color: white;font-size: 14px;}
+.sec_l_b>div:first-line{font-size: 18px;}

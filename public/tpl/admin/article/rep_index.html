@@ -1,0 +1,52 @@
+{extend name="layout"}
+
+{block name="header"}
+<script type="text/javascript" src="__IMAGES__/jquery.min.js"></script>
+{/block}
+
+{block name="content"}
+<blockquote class="layui-elem-quote news_search">
+    <form method="get">
+        <div class="layui-inline">
+            <div class="layui-input-inline">
+                <input type="text" name="title" value="{$title}" placeholder="输入文章标题" class="layui-input search_input">
+            </div>
+            <div class="layui-input-inline">
+                <input type="text" name="id" value="{$id}" placeholder="输入文章ID" class="layui-input search_input">
+            </div>
+            <input type="submit" class="layui-btn search_btn" value="查询">
+        </div>
+    </form>
+</blockquote>
+<div class="layui-form news_list">
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <th width="5%">ID</th>
+            <th width="10%">评论人</th>
+            <th width="20%">文章</th>
+            <th>评论内容</th>
+            <th width="12%">时间</th>
+            <th width="12%">操作</th>
+        </tr>
+        </thead>
+        {volist name="list" id="vo"}
+        <tr>
+            <td class="center pic-area">{$vo.id}</td>
+            <td class="td-name">{$vo.member.username}</td>
+            <td class="td-name"><a href="{:url('index/article/info',['id'=>$vo['article']['id']])}" target="_blank">{$vo.article.title}</a></td>
+            <td class="td-name">{$vo.content}</td>
+            <td class="center">{$vo.time|date='Y-m-d H:i:s',###}</td>
+            <td>
+                {eq name="vo.view" value="0"}<a href="{:url('rep_view?id='.$vo['id'])}" class="layui-btn layui-btn-mini news_edit">显示</a>{/eq}
+                <a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="8" href="javascript:if(confirm('确实要删除吗?'))location='{:url('rep_del?id='.$vo['id'])}'"><i class="layui-icon"></i> 删除</a>
+            </td>
+        </tr>
+        {/volist}
+    </table>
+</div>
+{/block}
+
+{block name="footer"}
+
+{/block}

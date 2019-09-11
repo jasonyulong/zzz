@@ -1,0 +1,31 @@
+/*登录框*/
+#logindiv{width: 350px; height: 340px; position: relative; background-color: #E6E8F2;float: right;
+    margin: 65px 150px;margin-right: 15% ;border-radius: 30px; }
+#logindiv-hread{box-sizing:border-box;padding-left: 50px;-moz-box-sizing:border-box;-webkit-box-sizing:border-box; width: 350px;
+    height: 60px; font-size: 18px;font-weight:800;line-height: 60px;color:#596082; font-family:新宋体    }
+#logindiv-username{height: 65px;}
+#logindiv-password{height: 54px;}
+#logindiv-password  input{border: 0px ; box-sizing:border-box; padding-left: 30px;-moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */ width: 250px;  height: 30px;position: relative;padding-left: 30px;
+    margin-left: 50px; background: url("../img/icons/icons-password.png") no-repeat ;background-position: 5px; background-size: 15px 15px;
+    background-color: white;}
+#login-tips{ height: 54px;margin: 10px}
+#login-button{ width: 350px; height: 90px;}
+#username{ border: 0px ; box-sizing:border-box;padding-left: 30px; -moz-box-sizing:border-box; /* Firefox */-webkit-box-sizing:border-box; /* Safari */
+    width: 250px;  height: 30px; position: relative;  padding-left: 30px;  margin-left: 50px;margin-top: 10px;background: url("../img/icons/icons-usernmae.png") no-repeat ;
+    background-position: 5px;background-size: 15px 15px;background-color: white; }
+#usermsg{ width: 250px;height: 20px; line-height: 12px }
+#pwdmsg{width: 250px;height: 20px; line-height: 12px }
+#logindiv-true input{  border: 0px ;  box-sizing:border-box; padding-left: 30px; -moz-box-sizing:border-box; /* Firefox */ -webkit-box-sizing:border-box; /* Safari */
+    width: 180px;height: 30px; position: relative;padding-left: 30px;margin-left: 50px;background: url("../img/icons/cions-tips.png") no-repeat ;
+    background-position: 5px; background-size: 15px 15px;background-color: white; }
+#true{ border: 0px ;  width: 50px; position: relative;margin-left: 20px; background-color: white;  }
+#loginsub{ font-family: 微软雅黑;font-weight: 600;color:#FFFFFF;font-size: 18px; width: 250px; height: 30px; margin-left: 50px; background-color: #0E8FA6; border-radius: 7px;border: 0px;}
+#loginsub:hover{box-shadow: black 0px 0px 1px ; }
+#linefter{width: 100%; position: relative; height: 2px; background-color: white;}
+#line{ width: 50%;height: 2px;background-color:#596082;}
+input:focus{ outline: 1px red silver;background-color: brown; }
+#true-img{width: 50px;height: 30px;float: right;margin-right: 52px;background:white  center; }
+#regsitmsg{margin-left: 40px;}
+#regsit{text-decoration: none;margin-left: 40px; line-height: 40px;color:#596082;font-size: 14px}
+#regsitnext{color: red; text-decoration: none;position: relative;margin-left: 125px ; font-size: 14px}

@@ -1,0 +1,7 @@
+body{background-color: #F4F4F4}
+#news_head {
+    background-image: url(../../imgs/responsibliity/37.jpg);
+}
+.res_f{width: 1200px;height: 790px;margin: 70px auto 97px auto;padding: 66px 50px 142px 50px;background-color: white;display: flex;justify-content: space-between;align-items: flex-end}
+.res-f-l{width: 550px;}
+.res-f-l blockquote{font-size: 16px;color: #515151;padding-top: 50px;line-height: 35px;}

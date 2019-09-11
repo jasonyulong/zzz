@@ -1,0 +1,67 @@
+{extend name="layout"}
+
+{block name="header"}
+<link rel="stylesheet" href="__IMAGES__/layui/css/user.css" media="all" />
+<script type="text/javascript" src="__IMAGES__/jquery.min.js"></script>
+<script type="text/javascript" src="__STATIC__/vali/dist/SMValidator.min.js"></script>
+<script type="text/javascript" src="__STATIC__/vali/src/config.js"></script>
+{/block}
+
+{block name="content"}
+<form class="layui-form changePwd" method="post" enctype="multipart/form-data" id="form">
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户名</label>
+        <div class="layui-input-block">
+            <input type="text" value="{$userinfo.username}" disabled class="layui-input layui-disabled">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">昵称</label>
+        <div class="layui-input-block">
+            <input type="text" name="nickname" id="nickname" value="{$info.nickname}" class="layui-input pwd">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">头像</label>
+        <div class="layui-input-block">
+            {if condition="$info.face neq ''"}
+            <img src="{$info.face}" style="width: 200px; height: 200px;">
+            {else}
+            <img src="{$userinfo.face}" style="width: 200px; height: 200px;">
+            {/if}
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">更换头像</label>
+        <div class="layui-input-block">
+            <div class="layui-box layui-upload-button">
+                <input type="file" name="face" class="layui-upload-file" lay-title="上传图片">
+                <span class="layui-upload-icon"><i class="layui-icon">+</i>上传图片</span></div>
+            <div class="layui-form-item">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit="" lay-filter="changePwd">立即修改</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="{$userinfo.id}">
+</form>
+{/block}
+
+{block name="footer"}
+<script language="javascript">
+    new SMValidator('form', {
+        submit: function(valid, form) {
+            if(valid) form.submit();
+        },
+        required: '请输入内容',
+        fields: {
+            password: 'required|length(3,12)',
+            password2: 'equal(#password)',
+        }
+    });
+</script>
+{/block}

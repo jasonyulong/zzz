@@ -1,0 +1,94 @@
+{extend name="layout"}
+
+{block name="header"}
+<title>{$info.name} - 工作案例</title>
+<link rel="stylesheet" href="__IMAGES__/pg/public/css/public.css">
+<link rel="stylesheet" href="__IMAGES__/pg/css/news.css">
+{/block}
+
+{block name="content"}
+{include file="../public/tpl/index/head.html" /}
+
+<!--新闻固定选项 start-->
+<div id="newscontent">
+    <div class="news-left">
+        <div style="height: 40px; clear: both;"></div>
+        <div class="projects" id="shareweibo" onclick="charweibo()">
+            <span style="background-color: red"><img width="25" src="__IMAGES__/pg/images/icons/weibo.png" alt=""></span> <strong>&nbsp;&nbsp;&nbsp;微博</strong>
+        </div>
+        <div class="projects" id="shareqq" onclick="charqq()">
+            <span style="background-color: #FFBD1D"><img width="25" src="__IMAGES__/pg/images/icons/cssi_qzone-512.png" alt=""></span> <strong>&nbsp;Qzone</strong>
+        </div>
+        <script language="javascript">
+            function charweibo(){
+                window.open("http://service.weibo.com/share/share.php?url=http://www.i35tax.com{:url('index/anli/info',['id'=>$info['id']])}&sharesource=weibo&title={$info.name}&appkey=",'_blank');
+            }
+            function charqq(){
+                window.open("https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.i35tax.com{:url('index/anli/info',['id'=>$info['id']])}&sharesource=qzone&title={$info.name}&summary={$info.des}",'_blank');
+            }
+        </script>
+        <div style="height: 40px;"></div>
+
+        <div class="projects">
+            <span style="background-color: #64B1FF"><img width="25"  src="__IMAGES__/pg/images/icons/Artboard_17-512.png" alt=""></span><strong>&nbsp;&nbsp;&nbsp;评论</strong>
+        </div>
+        <div class="projects">
+            <span style="background-color: #CFA972"><img width="25"  src="__IMAGES__/pg/images/icons/Christmas_star-512.png" alt=""></span> <strong >&nbsp; &nbsp;收藏</strong>
+        </div>
+        <div class="projects">
+            <span style="background-color: #FF6631"><img width="25" src="__IMAGES__/pg/images/icons/08_thumbs_up-520.png" alt=""></span> <strong>&nbsp;&nbsp;&nbsp;点赞</strong>
+        </div>
+    </div>
+    <div class="news-content">
+        <h1>{$info.name}</h1>
+        <div style="height: 50px;background-color: white;margin: 0px;">
+            <p style="margin: 0px;text-indent: 40px;color:#666666"><span>发布时间：{$info.time|date='Y-m-d H:i:s',###}</span>&nbsp;&nbsp;<span>评论：{$info.saysum}</span>&nbsp;&nbsp;<span>收藏：{$info.cangsum}</span>&nbsp;&nbsp;<span>点赞：{$info.zan}</span></p>
+        </div>
+        <div class="ans">
+            {$info.des}
+            <img src="{$info.pic}" width="619" alt="">
+            {$info.l}
+        </div>
+        <p><strong>{$info.saysum}</strong>&nbsp;&nbsp;条评论</p>
+        <form method="post">
+            {eq name="islogin" value="yes"}<img src="{$memberinfo.face}" style="width: 50px; height: 50px;">{/eq}
+            {eq name="islogin" value="no"}<img src="__IMAGES__/pg/images/icons/1.png">{/eq}
+            <textarea id="comment" type="text" name="content" placeholder="写下您的评论"></textarea>
+            <input type="submit" value="评论">
+            <input type="hidden" name="ce_id" value="{$info.id}">
+        </form>
+        <button class="morenews" style="margin-top:20px;">查看更多</button>
+    </div>
+    <div class="news-right">
+        <div class="news">
+            <h4>热门案例</h4>
+            <div class="newslist">
+                {volist name="hotlist" id="vo"}
+                <a href="{:url('index/anli/info',['id'=>$vo['id']])}" class="news-right-pro">
+                    <div style="width: 100px;height: 65px"><img src="{$vo.pic|pic_suo=###,true}" width="100" height="65" alt="{$vo.name}"></div><div style="font-weight: 600;font-size: 18px;;color: black;padding: 10px 5px;">{$vo.name}</div>
+                </a>
+                {/volist}
+            </div>
+        </div>
+        <div class="gong">
+            <h3>关注瑞立诺</h3>
+            <p>每日最新财税资讯，尽在瑞立诺公众号，扫一扫即可关注</p>
+            <div><img width="155" height="155" src="__IMAGES__/pg/images/icons/a381c9072bf65485ce94ff4550bb158c.png" alt="微信公众号"> </div>
+        </div>
+    </div>
+</div>
+
+<div style="height: 65px;border-bottom: 2px solid #999999"></div>
+
+<input type="hidden" id="islogin" value="{$islogin}">
+<input type="hidden" id="id" value="{$info.id}">
+{include file="../public/tpl/index/count.html" /}
+{/block}
+
+{block name="footer"}
+<script src="__IMAGES__/pg/js/lazy.js"></script>
+<script src="__IMAGES__/pg/js/case.js"></script>
+<script language="javascript">
+    $("#anlihead").addClass("active");
+</script>
+{/block}

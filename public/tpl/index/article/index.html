@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻中心 - {$sysinfo.title}</title>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/reset.css">
+    <script src="__IMAGES__/zzz/js/lib/jquery-3.3.1.min.js"></script>
+    <script src="__IMAGES__/zzz/js/lib/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/lib/animate.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/public.css">
+    <link rel="stylesheet" href="__IMAGES__/zzz/css/views/news.css">
+    <script src="__IMAGES__/zzz/js/publics.js"></script>
+</head>
+<body style="position: relative">
+{include file="../public/tpl/index/nav.html" /}
+<div id="news_head">
+    <div class="title">
+        <h2 id="animation_h2">目标化，标准化，效能化，系统化，长远化。</h2>
+        <p id="animation_p">开放、坦诚沟通；换位思考，关注需求与感受，达成共识，求同存异。</p>
+    </div>
+</div>
+<div class="pub_link">
+    <div id="new_chooes">
+    	<p {if condition="$id==0"}class="active"{/if}><a {if condition="$id==0"}class="active"{/if}  href="{:url('index/article/index')}">全部新闻</a></p>
+        <p {if condition="$id==13"}class="active"{/if}><a {if condition="$id==13"}class="active"{/if} href="{:url('index/article/index',['id'=>'13'])}">公司要闻</a></p>
+        <p {if condition="$id==14"}class="active"{/if}><a {if condition="$id==14"}class="active"{/if} href="{:url('index/article/index',['id'=>'14'])}">媒体报道</a></p>
+        <p {if condition="$id==15"}class="active"{/if}><a {if condition="$id==15"}class="active"{/if} href="{:url('index/article/index',['id'=>'15'])}">行业新闻</a></p>
+    </div>
+</div>
+<div id="newContent">
+    <div class="alertNews">
+
+    </div>
+    <div style="width: 100%;height: 75px;background-color: #f4f4f4"></div>
+    {volist name="list" id="vo" key="k"}
+    {if condition="$k==1"}
+    <a href="{:url('index/article/info',['id'=>$vo['id']])}" class="hotNew pub_bgc">
+        <div class="left">
+            <h2 class="news_h2">{$vo.title}</h2>
+            <blockquote>{$vo.content}</blockquote>
+            <p>{$vo.sortname} {$vo.time|date='Y-m-d H:i:s',###}</p>
+        </div>
+        <div class="right">
+            <img src="{$vo.pic}" width="454" height="365" alt="">
+        </div>
+    </a>
+    {/if}
+    {/volist}
+    <div id="newsList">
+        {volist name="list" id="vo" key="k"}
+        {if condition="$k>1"}
+        <div class="pro_news">
+            <a href="{:url('index/article/info',['id'=>$vo['id']])}">
+                <div class="figure">
+                    <img src="{$vo.pic}" width="384" height="240" alt="">
+                </div>
+                <div class="figcaption">
+                    <h3>{$vo.title}</h3>
+                    <p>{$vo.content}</p>
+                    <div>
+                        <em>{$vo.sortname} {$vo.time|date='Y-m-d H:i:s',###}</em><b>+</b>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {/if}
+        {/volist}
+    </div>
+    <!--分页-->
+    <div id="pagination">
+        {$list->render()}
+    </div>
+</div>
+
+{include file="../public/tpl/index/foot.html" /}
+<script>
+    $(function () {
+        $("#second_Head").hide()
+        $("#jiesao").addClass("active")
+        $("#jiesao").parent("p").addClass("active")
+        $("#nav_index").addClass("active")
+        $("#nav_index2").addClass("active")
+        $(document).on("scroll",function () {
+            var $scroll=parseInt($(window).scrollTop());
+            if($scroll>200){
+                $(".hotNew").addClass("a-fadeinT")
+            }
+            if($scroll>600){
+                $("#newsList").addClass("a-fadeinR")
+            }
+        })
+    })
+</script>
+</body>
+</html>

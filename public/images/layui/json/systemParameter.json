@@ -1,0 +1,14 @@
+{
+    "cmsName": "瑟维思后台管理模版",
+    "version": "1.0.0",
+    "author": "我们不一样",
+    "homePage": "page/index.html",
+    "server": "windows",
+    "dataBase": "8.00.2039",
+    "maxUpload": "2M",
+    "userRights": "总管理员",
+    "description": "",
+    "powerby": "copyright @2018 我们不一样",
+    "record": "京ICP备14040xxx号-1",
+    "keywords": "layui，我们不一样"
+}

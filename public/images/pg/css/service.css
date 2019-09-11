@@ -1,0 +1,18 @@
+body{background-color:#F0F0F0 }
+#window{display: flex;flex-direction: column}
+#window div{border-radius: 20px;width: 150px;margin:5px 10px;height: 40px;border-radius: 20px;text-align: center;line-height: 40px;font-size: 20px;color: black;font-weight: 200;background-color: #F0F0F0;cursor: pointer}
+#window .scrool{background-color: red;color: white}
+#service-scope{width: 1200px;min-width: 1200px;margin: 0 auto;margin-top: 50px}
+.scopepro{width: 1045px;background-color: white;position: relative;left: 200px;margin-bottom: 30px;padding: 40px 43px 60px 40px;display: flex}
+.scopepro .img{width:295px;height: 100%; }
+.scopepro .img img{box-shadow: 6px 12px #F0F0F0;}
+.scopepro .scope{width: 630px;padding-left: 10px;}
+.scopepro .scope h3{padding-top: 10px;padding-bottom: 40px;font-size: 35px;font-weight: 600;color: red}
+#service-scope .scopepro .scope .title{font-size: 18px;line-height: 30px;}
+#service-scope .scopepro .scope .service{width: 240px;height: 60px;background-color: blue;border-radius: 30px;font-size: 35px;font-weight: 600;text-align: center;line-height: 60px;color: white;margin: 35px 0;}
+#service-scope .scopepro .scope h4{font-weight: 600;font-size: 30px;margin: 25px 0px;}
+#service-scope .scopepro .scope .core {margin-top: 20px;display: flex;flex-wrap: wrap}
+#service-scope .scopepro .scope .self{font-size: 18px;line-height: 40px;}
+#service-scope .scopepro .scope .core span{display: block;width: 30px;height: 30px;border-radius: 50%;border: 1px solid red; color: red;text-align: center;font-size: 18px;line-height: 30px;margin-right: 20px;}
+#service-scope .scopepro .scope .core strong{display: block;font-size: 18px;font-weight: 400;margin-left: 0px;line-height: 30px;width: 570px;}
+#service-scope .scopepro .scope .core p{padding: 10px;padding-left: 50px;line-height: 25px;color: #999999}

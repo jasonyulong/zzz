@@ -1,0 +1,33 @@
+body{background-color: #F0F0F0}
+select::-ms-expand{display:none;}
+select{
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
+input::-webkit-input-placeholder {color:#999999;font-size:14px}
+input:-moz-placeholder {　color:#999999;font-size:14px}
+input::-moz-placeholder {　color:#999999;font-size:14px}
+input:-ms-input-placeholder {　color:#999999;font-size:14px}
+input,select,textarea{outline: none;text-indent: 20px;height: 50px;background-color:#F0F0F0;border: none}
+#message input[type=submit]{width: 95px;height: 95px;border: 1px solid red; color: red;font-size: 18px;font-weight: 600;margin-top: 20px;vertical-align: top;border-radius: 0 0 30px 0px}
+#contentus{width: 1200px;height: 900px;margin: 0 auto;min-width: 1200px;padding: 0px 40px;background-color: white;margin-top: 50px;}
+#title{width: 1120px;padding: 40px 0;border-bottom: 1px solid #dcdcdc;display: flex;justify-content: space-between}
+#title .title{height: 70px;}
+#title .title h2{margin: 0px;font-size: 35px;color: red;font-weight: 600;margin-bottom: 20px;}
+#title .title p{margin: 0px;color:#666666 }
+#title .xunwen{height: 50px;width: 170px;border-radius: 50px;border: 2px solid #FF6200;color: #FF6200;font-size: 25px;text-align: center;line-height: 48px;display: block;text-decoration: none;font-weight: 800;margin
+: 10px 0;}
+#firend{width: 1120px;height: 710px;margin-top: 40px;display: flex;justify-content: space-between;flex-wrap: wrap}
+#firend .project{width: 520px;height: 300px;margin-bottom:55px;display: block ;text-decoration: none;color: black;cursor:auto }
+#firend .project .img{width: 520px;height: 180px;}
+#firend .project h3{margin-top: 20px;font-size: 25px;font-weight: 600}
+#firend .project .title{margin-top: 20px;color:#666666 }
+#message{width: 1200px;height: 460px;background-color: white;margin:50px auto;padding: 40px;border-bottom: 1px solid #dcdcdc;}
+#message .title{height: 70px;}
+#message .title h2{margin: 0px;font-size: 35px;color: red;font-weight: 600;margin-bottom: 20px;height: 35px}
+#message select{color: #999999}
+#title1{width: 1120px;padding-bottom: 40px;border-bottom: 1px solid #dcdcdc;display: flex;justify-content: space-between}
+#title1 .title{height: 70px;}
+#title1 .title h2{margin: 0px;font-size: 35px;color: red;font-weight: 600;margin-bottom: 20px;}
+#title1 .title p{margin: 0px;color:#666666 }

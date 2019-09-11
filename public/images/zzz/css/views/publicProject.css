@@ -1,0 +1,36 @@
+body{background-color: white}
+#news_head {background-image: url(../../imgs/responsibliity/37.jpg);}
+.pub_f{width: 1200px;height: 270px;padding-top: 68px;margin: 0 auto;}
+.pub_s{width: 1200px;height: 500px;margin: 0 auto;display: flex;margin-bottom: 70px;}
+.pub_s_l{width: 750px;height: 500px;}
+.pub_s_r{width: 450px;height: 500px;background-color: #D2292C;padding: 40px;color: white;display: flex;align-content: space-between;flex-wrap: wrap;position: relative}
+.pub_s_r h3{height: 24px;font-size: 24px;line-height: 24px;margin-bottom: 23px;font-weight: bold}
+.pub_s_r p{padding-left: 35px;background: url("../../imgs/publicProject/40.png")no-repeat 5px center;font-size: 14px;}
+.pub_s_r blockquote{font-size: 14px;line-height: 35px;height: 60%;overflow: hidden;}
+.pub_s_r blockquote:before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+.pub_s_r blockquote:after{
+    content: "...";
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+.pub_s_r a{align-self: flex-end;position: absolute;right: 40px;bottom: 40px;text-indent: 20px;line-height: 44px;font-size:14px;display: inline-block;
+    width: 157px;height: 44px;border: 1px solid white;}
+.pub_s_r a img{vertical-align: middle;position: relative}
+.pub_s_r a span{margin-right: 20px;}
+.pub_s_r a:hover{color: white;}
+#prev,#next{position: absolute;top: 50%; }
+#prev{left: 30px}
+#next{right: 30px;}
+#myCarousel{position: relative}
+.prolist{width: 1200px;margin: 0 auto;display: block;padding-bottom: 50px;transition: 0.25s ease-in-out;border-bottom: 1px solid transparent}
+.prolist:hover{background-color: #F4F4F4;}
+.prolist h3{color: #D2292C;font-size: 32px;font-weight: bold;padding-top: 43px;}
+.prolist p{font-size: 18px;font-weight: bold;color: #535353;margin-top: 30px;margin-bottom: 25px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.prolist>div{ color: #797979;font-size: 14px;line-height: 25px;overflow: hidden;text-overflow: ellipsis;
+    -webkit-box-orient: vertical;-wekkit-line-clamp:2;display:-webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:3;}

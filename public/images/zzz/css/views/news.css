@@ -1,0 +1,33 @@
+#news_head{background-image: url("../../imgs/news/11.jpg");position: relative}
+.title{width: 1200px;margin: 0 auto;padding-top: 20%;max-height: 300px}
+.title em{margin: 0px auto; width: 220px;height: 60px;border: 1px solid white;;display: block;font-size: 24px;color: white;line-height: 60px;text-align: center;font-weight: normal;font-family: "Microsoft YaHei"}
+.title h1{font-size: 70px;color: white;text-align: center;margin-top: 46px;}
+#newContent{width: 100%;background-color: #F4F4F4;position: relative }
+.hotNew{width: 1200px;display: flex;margin: 0 auto; flex-wrap: wrap;position: relative;
+    left: 0px;margin-bottom: 50px;
+}
+.hotNew .left{width: 750px;height: 365px;color: white;}
+.hotNew .left .news_h2{font-size: 22px;padding: 40px 40px ;margin: 0  }
+.hotNew .left blockquote{padding: 0 40px;font-size: 14px;line-height: 35px;color: #FFFFFF;max-height: 210px;overflow: hidden}
+.hotNew .left p{padding: 0px 40px;font-size: 14px;;color: #dbe4ff;position: absolute;bottom: 10px}
+.hotNew .right{height: 365px;width: 450px;}
+.hotNew .line{width: 1200px;height: 3px;padding: 0;margin: 0;}
+#newsList {width: 1243px;margin: 0 auto;display: flex;justify-content:flex-start;flex-wrap: wrap;position: relative;left: 20px}
+#newsList .pro_news{width: 33.33333%;height: 500px;margin-bottom: 34px;color: #5b5b5b;cursor:pointer;padding-right: 3%}
+#newsList .pro_news figcaption{width: 100%;height: 240px;background-color: white;}
+.figure{width: 100%;height: 240px;overflow: hidden}
+.figure>img{transition: 0.5s ease-in-out}
+.figure>img:hover{transform: scale(1.1)}
+.figcaption{background-color: white;transition: 0.5s ease-out;height: 240px;width: 100%;}
+.figcaption:hover{background-color: #D2292C}
+.figcaption:hover h3{color: white}
+.figcaption:hover p{color: white}
+.figcaption:hover em{color: white}
+.figcaption:hover b{color: white}
+.figcaption h3{font-weight: bold;font-size: 18px;padding: 30px;color: #5b5b5b;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.figcaption p{font-size: 14px;color: #929292;padding: 0 30px;line-height: 24px;overflow: hidden;height: 72px;
+display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:3}
+.figcaption div{display: flex;padding-top: 30px;padding-left: 30px;justify-content: space-between;padding-right: 30px;}
+.figcaption>div>em{font-size: 14px;color:#929292 }
+.figcaption>div>b{font-size: 20px;color:#929292  }
+

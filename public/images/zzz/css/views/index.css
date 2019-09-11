@@ -1,0 +1,152 @@
+body{overflow-x: hidden;overflow-y: scroll;}
+body::-webkit-scrollbar{width: 1px;height: 1px;}
+/*大背景轮播*/
+.carousel-caption>h2{ font-size: 50px;font-weight: bold;position: relative;left: 0px;}
+.carousel-caption>h2 span{position: relative}
+#myCarousel{position: absolute}
+.carousel-caption {
+    position: absolute;
+    right: 0%;
+    bottom: 52.55%;
+    left: 0%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+.carousel-indicators {
+    position: absolute;
+    bottom: 44.72%;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    padding-left: 0;
+    margin-left: -30%;
+    text-align: center;
+    list-style: none;
+}
+.carousel-indicators .active {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    background-color: #F4B122;
+    margin-right: 16px;
+}
+.carousel-indicators li {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 0px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #E1E1E1;
+    border: 0px solid #fff;
+    border-radius: 0px;
+    margin-right: 16px;
+}
+/*//新闻*/
+#new{position:absolute;bottom: 9.25%;width: 100%}
+#new .new{width: 1200px;height:230px;background-color: red;margin: 0 auto;display: flex }
+.newFirst{width: 177px;background-color: white;padding-top: 50px;padding-left: 27px;height: 230px;z-index: 1;position: relative}
+.newFirst>h3{font-weight: bold;color: #3179B2;font-size: 18px;margin: 0;padding: 0;margin-bottom: 15px;}
+.newSecond{width: 290px;height: 230px;
+    background: -ms-linear-gradient(left bottom,rgba(49,127,178,1)50%,rgba(90, 225, 241,1));
+    background: -webkit-linear-gradient(left bottom,rgba(49,127,178,1)50%,rgba(90, 225, 241,1)); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(left bottom,rgba(49,127,178,1)50%,rgba(90, 225, 241,1)); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(left bottom,rgba(49,127,178,1)50%,rgba(90, 225, 241,1)); /* Firefox 3.6 - 15 */
+    background: linear-gradient(left bottom,rgba(49,127,178,1)50%,rgba(90, 225, 241,1)); /* 标准的语法 */}
+#myCarouse{height: 230px;}
+#myCarouse .item{height: 230px;}
+#myCarouse .item h6{color: #348BCA;font-size:24px;font-weight:bold;margin-top: 25px;height: 40px;background-color:white;display: inline-block;padding-left: 20px;padding-right: 50px;line-height: 40px;}
+#myCarouse .item p{color: white;line-height: 24px;padding-left: 20px;padding-right: 20px;margin-bottom: 10px;margin-top: 10px;}
+#myCarouse .item em{color: white;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:3;overflow: hidden;
+    text-overflow:ellipsis;padding-left: 20px;padding-right: 20px;font-size: 12px;line-height: 24px;display: block}
+#left{position: absolute;right: 50px;bottom: 10px;background-color: transparent;border: 0px;outline: 0px}
+#right{position: absolute;right: 30px;bottom: 10px;background-color: transparent;border: 0px;outline: 0px}
+.newThird{width: 218px;height: 230px;position: relative}
+.newThird h2{position: absolute;bottom: 10px;text-align: center;font-size: 36px;font-weight: bold;color: white;width: 100%;margin: 0}
+.newFourth{width: 287px;height: 230px;
+    background: -ms-linear-gradient(left bottom,rgba(205, 127, 78,1)50%,rgba(238, 210, 129,1));
+    background: -webkit-linear-gradient(left bottom,rgba(205, 127, 78,1)50%,rgba(238, 210, 129,1)); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(left bottom,rgba(205, 127, 78,1)50%,rgba(238, 210, 129,1)); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(left bottom,rgba(205, 127, 78,1)50%,rgba(238, 210, 129,1)); /* Firefox 3.6 - 15 */
+    background: linear-gradient(left bottom,rgba(205, 127, 78,1)50%,rgba(238, 210, 129,1)); /* 标准的语法 */}
+.newFourth h2{margin: 36px 23px 10px 23px;font-size: 15px;font-weight: bold;line-height: 24px;color: white}
+.newFourth p{margin: 0px 13px 19px 23px;height: 120px;overflow: hidden;font-size: 14px;color: white;line-height: 24px;}
+.newFifth{width: 226px;height: 230px;position: relative}
+.newFifth figure{position: absolute}
+.newFifth h3{position: absolute;width: 180px;height: 33px;border-bottom: 1px solid white;top: 36px;left: 24px;color: white;font-size: 18px;line-height: 24px;font-weight: bold;text-align: center}
+.newFifth p{position: absolute;width: 180px;top: 80px;left: 24px;font-size: 12px;color: white;}
+#Carousel{position: absolute;top:140px;width: 100%;height: 91px;}
+#Carousel .carousel-caption{width: 180px;height: 50px;background-color: red;padding: 0;}
+#Carousel .carousel-inner{width: 180px;height: 50px;margin: 0 auto}
+#Carousel .carousel-indicators{position: absolute;
+    bottom: 10%;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    padding-left: 0;
+    margin-left: -30%;
+    text-align: center;
+    list-style: none;}
+#Carousel .carousel-caption{display: flex}
+#Carousel .item{width: 180px;height: 50px;}
+#Carousel .item span{color: white;display: block;width: 25%}
+#Carousel .item .flex{display: flex;justify-content: space-between;flex-wrap: wrap}
+#Carousel .carousel-indicators li {
+    display: inline-block;
+    width: 14px;
+    height: 5px;
+    margin: 0px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #FFF;
+    border: 1px solid #dcdcdc;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 0px;
+    margin-right: 16px;
+}
+#Carousel .carousel-indicators .active {
+    width: 14px;
+    height: 5px;
+    margin: 0;
+    border: 1px solid #E65F00;
+    background-color: #E65F00;
+    margin-right: 16px;
+}
+@-webkit-keyframes mymove {
+    0%{
+       left: -500px;
+       opacity: 0;
+    }
+    100%{
+       left: 0px;
+       opacity: 1;
+    }
+}
+.carousel-caption .color{animation: mymove 1.5s ease-out;position: relative}
+/* Standard syntax */
+@keyframes mymove {
+    0%{
+        left: -500px;
+        opacity: 0.5;
+    }
+    100%{
+        left: 0px;
+        opacity: 1;
+    }
+}
+/*首頁尾部*/
+#foot{width: 100%;height: 3.7%;position: absolute;bottom: 2%;;z-index: 100;}
+#foot .foot{width: 1200px;height:40px;margin: 0 auto;display: flex;justify-content: space-between}
+#foot .foot .left{line-height: 40px;}
+#foot .foot .right{display: flex}
+.foot a+span{margin-left: 5px;margin-right: 5px;color: white}
+.weixin,.weobo{width: 2.1em;height: 2.1em;display: inline-block;border-radius: 50%;text-align: center;cursor: pointer;line-height: 2.5em}
+.foot p{display: inline-block;color: white;position: relative;top: -5px;margin-right: 45px;height: 100%;line-height: 40px}
+.weixin{background-color: #4F8F00;margin-right: 18px;}
+.weobo{background-color:#FFFFFF }
+#address{background-color: rgba(0,0,0,0.3);border-radius: 5px;padding: 8px 15px 0 15px }
